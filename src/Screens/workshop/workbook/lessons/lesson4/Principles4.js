@@ -25,66 +25,67 @@ const Principles4 = ({ navigation }) => {
             </TouchableOpacity>
 
             <Image
-          source={require('../../../../../../assets/images/logo.png')}
-              style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
+              source={require('../../../../../../assets/images/logo2.png')}
+              style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
             />
             <View style={{ flex: 1 }}>
-              <Text style={{ fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'center' }}>
-                workshop &gt; Lesson 4 &gt; Principles 
+              <Text style={{ fontSize: 10, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
+                Workshop &gt; Lesson 4 &gt; Principles
               </Text>
             </View>
           </View>
 
           {/* Content */}
-          <ScrollView contentContainerStyle={{ padding: 16 }}>
-          <Image
-                         source={require('../../../../../../assets/images/lesson4.png')}
-                            style={{ width: '100%', height: 140, marginBottom: 10 }}
-                            resizeMode='contain'
-                        />
+          <ScrollView contentContainerStyle={{ paddingBottom: 16 }}>
+            <Image
+              source={require('../../../../../../assets/images/lesson4.png')}
+              style={{ width: '100%', height: 140, marginBottom: 10 }}
+            />
 
             <Text style={{ fontSize: 16, marginBottom: 10, textAlign: 'center' }}>Lesson 4: Becoming One Through Equal Partnership & Complete Commitment</Text>
             <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Principles of Equal Partnership
-& Complete Commitment</Text>
+              & Complete Commitment</Text>
             <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
-        {/* Developing an Equal Partnership */}
-<Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
-  Developing an Equal Partnership
-</Text>
-<Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
-  • Our prophets have been very clear that husbands and wives are to be equal partners.{'\n'}
-  • We must overcome any false traditions and incorrect cultural understandings of the roles of men and women and commit to equal partnership in all aspects of our marriage.
-</Text>
+            {/* Developing an Equal Partnership */}
+            <View style={{ paddingLeft: 25, paddingRight: 20 }}>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>
+                Developing an Equal Partnership
+              </Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
+                • Our prophets have been very clear that husbands and wives are to be equal partners.{'\n'}
+                • We must overcome any false traditions and incorrect cultural understandings of the roles of men and women and commit to equal partnership in all aspects of our marriage.
+              </Text>
 
-{/* Gospel Teachings of Equality in Marriage */}
-<Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
-  Gospel Teachings of Equality in Marriage
-</Text>
-<Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
-  • We have a Mother in Heaven, co-equal with our Father in Heaven. Godhood cannot exist without an equal partnership between men and women.
-</Text>
+              {/* Gospel Teachings of Equality in Marriage */}
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>
+                Gospel Teachings of Equality in Marriage
+              </Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
+                • We have a Mother in Heaven, co-equal with our Father in Heaven. Godhood cannot exist without an equal partnership between men and women.
+              </Text>
 
-{/* Complete Commitment */}
-<Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
-  Complete Commitment
-</Text>
-<Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
-  • Committing completely to each other is a powerful act of becoming one.{'\n'}
-  • “Marriage is the sort of thing where it’s safer to go all in, and it’s dangerous to go in half-hearted.” - David Brooks (The Second Mountain, p. 146)
-</Text>
+              {/* Complete Commitment */}
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>
+                Complete Commitment
+              </Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
+                • Committing completely to each other is a powerful act of becoming one.{'\n'}
+                • “Marriage is the sort of thing where it’s safer to go all in, and it’s dangerous to go in half-hearted.” - David Brooks (The Second Mountain, p. 146)
+              </Text>
 
-{/* Divorce */}
-<Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
-  Divorce
-</Text>
-<Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 50 }}>
-  • The number one reason divorced individuals give for their divorce is lack of commitment (of one or both partners).
-</Text>
-
-
-
+              {/* Divorce */}
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>
+                Divorce
+              </Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10 }}>
+                • The number one reason divorced individuals give for their divorce is lack of commitment (of one or both partners).
+              </Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 50 }}>
+                • When we are considering divorce, it is helpful to think about President Faust’s 3 wise tests: o Length of marital difficulties o An “apparently irredeemable” relationship o Destructive of our dignity as a child of God.
+              </Text>
+            </View>
           </ScrollView>
         </View>
       </ScrollView>

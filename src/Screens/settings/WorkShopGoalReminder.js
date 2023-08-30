@@ -1,14 +1,38 @@
 import React, { useState } from 'react';
 import * as Notifications from 'expo-notifications';
-import { View, Text, Image, ScrollView, TouchableOpacity, Button, Alert } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity, Button, Alert, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Picker } from '@react-native-picker/picker';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import Icon from 'react-native-vector-icons/Ionicons';
+import SwitchToggle from 'react-native-switch-toggle';
+
+
+const CheckBox = ({ isSelected, onPress, label }) => (
+    <TouchableOpacity style={styles.checkboxContainer} onPress={onPress}>
+        <View style={[styles.checkbox, isSelected && styles.checked]} />
+        <Text style={styles.checkboxLabel}>{label}</Text>
+    </TouchableOpacity>
+);
 
 const WorkShopGoalReminder = ({ navigation }) => {
-    const [selectedDay, setSelectedDay] = useState('Monday');
-    const [time, setTime] = useState('');
+
+    const [isNotificationsEnabled, setNotificationsEnabled] = useState(false);
+    const [time, setTime] = useState('1:00');
+    const [ampm, setAMPM] = useState('AM');
     const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
+    const [selectedDays, setSelectedDays] = useState({
+        Sunday: false,
+        Monday: false,
+        Tuesday: false,
+        Wednesday: false,
+        Thursday: false,
+        Friday: false,
+        Saturday: false,
+    });
+
+    const toggleDaySelection = (day) => {
+        setSelectedDays(prevDays => ({ ...prevDays, [day]: !prevDays[day] }));
+    };
 
     const showTimePicker = () => {
         setTimePickerVisibility(true);
@@ -18,75 +42,63 @@ const WorkShopGoalReminder = ({ navigation }) => {
         setTimePickerVisibility(false);
     };
 
-    const handleTimePicked = (time) => {
-        const hours = time.getHours();
-        const minutes = time.getMinutes();
-        setTime(`${hours}:${minutes}`);
+    const handleTimePicked = (pickedTime) => {
+        const hours = pickedTime.getHours();
+        const minutes = pickedTime.getMinutes();
+        const isPM = hours >= 12;
+        const displayHours = isPM ? hours - 12 : hours;
+        setTime(`${displayHours}:${minutes < 10 ? '0' + minutes : minutes}`);
+        setAMPM(isPM ? 'PM' : 'AM');
         hideTimePicker();
     };
-    const askNotificationPermission = async () => {
-        const { status: existingStatus } = await Notifications.getPermissionsAsync();
-        let finalStatus = existingStatus;
-    
-        if (existingStatus !== 'granted') {
-            const { status } = await Notifications.requestPermissionsAsync();
-            finalStatus = status;
-        }
-    
-        if (finalStatus !== 'granted') {
-            alert('Failed to get push token for notifications!');
-            return false;
-        }
-        return true;
-    };
-    
+
     const setReminder = async () => {
-        const hasPermission = await askNotificationPermission();
-        
-        if (!hasPermission) {
-            return;  // Exit if no permission
+        if (!time) {
+            Alert.alert("Error", "Please select a time first.");
+            return;
         }
-    
-        const currentDate = new Date();
-        const targetDate = new Date();
-    
-        // Adjust the date to the next occurrence of the selected day
-        let dayDifference = daysOfWeek[selectedDay] - currentDate.getDay();
-        if (dayDifference <= 0) {
-            dayDifference += 7;
+
+        let anyDaySelected = false;
+        for (let day in selectedDays) {
+            if (selectedDays[day]) {
+                anyDaySelected = true;
+                break;
+            }
         }
-    
-        targetDate.setDate(currentDate.getDate() + dayDifference);
-        targetDate.setHours(parseInt(time.split(':')[0]));
-        targetDate.setMinutes(parseInt(time.split(':')[1]));
-        targetDate.setSeconds(0);
-    
-        // Schedule the notification
-        await Notifications.scheduleNotificationAsync({
-            content: {
-                title: 'Workshop Reminder',
-                body: `Your workshop is scheduled for ${selectedDay} at ${time}. Please ensure you are prepared.`,
-                data: { data: 'workshop-specific-info' },  // Optional data specific to this workshop, if needed
-            },            
-            // trigger: null,
-            trigger: targetDate,
-        });
-    
-        console.log(`Reminder set for ${selectedDay} at ${time}`);
-        Alert.alert(`Reminder set for ${selectedDay} at ${time}`);
+
+        if (!anyDaySelected) {
+            Alert.alert("Error", "Please select at least one day.");
+            return;
+        }
+
+        for (let day in selectedDays) {
+            if (selectedDays[day]) {
+                let targetDate = new Date();
+                const [hours, minutes] = time.split(':');
+                targetDate.setHours(hours);
+                targetDate.setMinutes(minutes);
+
+                const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const targetDayIndex = daysOfWeek.indexOf(day);
+                const currentDayIndex = targetDate.getDay();
+
+                if (currentDayIndex > targetDayIndex) {
+                    targetDate.setDate(targetDate.getDate() + 7 - (currentDayIndex - targetDayIndex));
+                } else {
+                    targetDate.setDate(targetDate.getDate() + (targetDayIndex - currentDayIndex));
+                }
+
+                await Notifications.scheduleNotificationAsync({
+                    content: {
+                        title: 'Workshop Goal Reminder',
+                        body: `Your workshop is scheduled for ${day} at ${time} ${ampm}. It's time to review your goal together!`,
+                    },
+                    trigger: { date: targetDate }
+                });
+            }
+        }
+        Alert.alert("Success", `Reminder set for selected days at ${time} ${ampm}`);
     };
-    
-    const daysOfWeek = {
-        'Sunday': 0,
-        'Monday': 1,
-        'Tuesday': 2,
-        'Wednesday': 3,
-        'Thursday': 4,
-        'Friday': 5,
-        'Saturday': 6,
-    };
-    
-    
 
     return (
         <>
@@ -96,64 +108,135 @@ const WorkShopGoalReminder = ({ navigation }) => {
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <Ionicons name="ios-arrow-back" size={30} color="white" />
                         </TouchableOpacity>
-
                         <Image
-                            source={require('../../../assets/images/logo.png')}
-                            style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
+                            source={require('../../../assets/images/logo2.png')}
+                            style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
                         />
                         <View style={{ flex: 1 }}>
-                            <Text style={{ fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'center' }}>
-                                workshop &gt; goal Reminder
+                            <Text style={{ fontSize: 9, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1 }}>
+                                Settings &gt; Workshop Goal Reminder
                             </Text>
                         </View>
                     </View>
 
-                    <ScrollView contentContainerStyle={{ padding: 16 }}>
+                    <ScrollView contentContainerStyle={{ paddingBottom: 16 }}>
                         <Image
                             source={require('../../../assets/images/lesson2_deep_learning.png')}
                             style={{ width: '100%', height: 158, marginBottom: 10 }}
-                            resizeMode='contain'
-                        />
-                        <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>
-                            Workshop Goal Reminder
-                        </Text>
-                        <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
-                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
-                            <Text>Select Day: </Text>
-                            <Picker
-                                selectedValue={selectedDay}
-                                style={{ height: 50, width: 150 }}
-                                onValueChange={(itemValue) => setSelectedDay(itemValue)}
-                            >
-                                <Picker.Item label="Monday" value="Monday" />
-                                <Picker.Item label="Tuesday" value="Tuesday" />
-                                <Picker.Item label="Wednesday" value="Wednesday" />
-                                <Picker.Item label="Thursday" value="Thursday" />
-                                <Picker.Item label="Friday" value="Friday" />
-                                <Picker.Item label="Saturday" value="Saturday" />
-                                <Picker.Item label="Sunday" value="Sunday" />
-                            </Picker>
+                        />
+                        <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10, marginTop: 20 }} />
+                        <View style={{ paddingLeft: 16, paddingRight: 16 }}>
+                            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                                <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
+                                    Workshop Goal Reminder
+                                </Text>
+                                <Icon name="md-toggle" size={50} color="white" />
+
+                            </View>
+                            <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
+
+                            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>Day(s):</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                {['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'].map((day, index) => (
+                                    <TouchableOpacity
+                                        key={day} // Now unique
+                                        style={{
+                                            width: 30,
+                                            height: 30,
+                                            borderRadius: 20,
+                                            borderColor: selectedDays[day] ? '#ab713c' : '#90b1c2',
+                                            borderWidth: 2,
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            marginHorizontal: 5
+                                        }}
+                                        onPress={() => toggleDaySelection(day)}
+                                    >
+                                        <Text style={{ fontWeight: 'bold' }}>{day}</Text>
+                                    </TouchableOpacity>
+                                ))}
+                            </View>
+
+
+                            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginTop: 10 }}>Time:</Text>
+                            <TouchableOpacity onPress={showTimePicker} style={styles.touchableContainer}>
+                                <View style={styles.timeContainer}>
+                                    <View style={styles.boxContainer}>
+                                        <View style={styles.box}>
+                                            <Text style={styles.boxText}>{time}</Text>
+                                        </View>
+                                        <View style={styles.box}>
+                                            <Text style={styles.boxText}>{ampm}</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+                            <View style={styles.buttonContainer}>
+                                <TouchableOpacity onPress={setReminder} style={styles.button}>
+                                    <Text style={styles.buttonText}>Set Reminder</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                            <DateTimePickerModal
+                                isVisible={isTimePickerVisible}
+                                mode="time"
+                                onConfirm={handleTimePicked}
+                                onCancel={hideTimePicker}
+                            />
                         </View>
 
-                        <TouchableOpacity onPress={showTimePicker} style={{ marginBottom: 20 }}>
-                            <Text>Set Time: {time}</Text>
-                        </TouchableOpacity>
-
-                        <Button title="Set Reminder" onPress={setReminder} />
-
-                        <DateTimePickerModal
-                            isVisible={isTimePickerVisible}
-                            mode="time"
-                            onConfirm={handleTimePicked}
-                            onCancel={hideTimePicker}
-                        />
                     </ScrollView>
                 </View>
             </ScrollView>
         </>
     );
 };
+
+
+const styles = StyleSheet.create({
+    buttonContainer: {
+        marginTop: 20,
+        alignSelf: 'center',
+    },
+    button: {
+        width: 200,
+        borderWidth: 2,
+        borderColor: '#ab713c',
+        borderRadius: 30,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        alignItems: 'center',
+    },
+    buttonText: {
+        // color: 'white',
+        fontSize: 16,
+    },
+    touchableContainer: {
+        marginBottom: 20,
+    },
+    timeContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    timeText: {
+        marginRight: 10,
+    },
+    boxContainer: {
+        flexDirection: 'row',
+    },
+    box: {
+        borderWidth: 1,
+        borderColor: 'black',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        marginHorizontal: 5,
+    },
+    boxText: {
+        fontSize: 16,
+        color: '#ab713c'
+    },
+});
 
 export default WorkShopGoalReminder;

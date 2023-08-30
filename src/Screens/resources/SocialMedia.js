@@ -35,46 +35,46 @@ const SocialMedia = ({ navigation }) => {
             </TouchableOpacity>
 
             <Image
-              source={require('../../../assets/images/logo.png')}
+              source={require('../../../assets/images/logo2.png')}
               style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
             />
             <View style={{ flex: 1 }}>
-              <Text style={{ fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'center' }}>
+              <Text style={{ color: '#707070', fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
                 Resources &gt; Social Media
               </Text>
             </View>
           </View>
 
           {/* Content */}
-          <ScrollView contentContainerStyle={{ padding: 16 }}>
+          <ScrollView contentContainerStyle={{ paddingBottom: 16 }}>
             <Image
               source={require('../../../assets/images/about_classes.png')}
               style={{ width: '100%', height: 150, marginBottom: 10 }}
-              resizeMode='contain'
             />
 
             <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
-            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Social Media</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10, color: '#707070' }}>Social Media</Text>
             <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
-            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 20, marginBottom: 50 }}>
-              Please feel free to browse or follow our social media accounts. Our goal is to provide reminders of principles learned as well as help you find good resources as you inten
+            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 20, marginBottom: 50, paddingLeft: 25, paddingRight: 5 }}>
+              Please feel free to browse or follow our social media accounts. Our goal is to provide reminders of principles learned as well as help you find good resources as you intentionally become one.
             </Text>
 
             {/* Social Media Icons */}
-            <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 20 }}>
+            <View style={{ flexDirection: 'column', marginBottom: 20, paddingLeft: 35 }}>
               <TouchableOpacity onPress={handleFacebookPress}>
                 <Ionicons name="logo-facebook" size={40} color="#3b5998" />
               </TouchableOpacity>
-              <TouchableOpacity style={{ marginLeft: 20 }} onPress={handleInstagramPress}>
+              <TouchableOpacity style={{ marginTop: 20 }} onPress={handleInstagramPress}>
                 <Ionicons name="logo-instagram" size={40} color="#e4405f" />
               </TouchableOpacity>
             </View>
 
+
             {/* Social Media Text */}
-            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
+            {/* <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20, paddingLeft: 20, paddingRight: 5 }}>
               Follow us on Facebook and Instagram for the latest updates and helpful resources.
-            </Text>
+            </Text> */}
           </ScrollView>
         </View>
       </ScrollView>

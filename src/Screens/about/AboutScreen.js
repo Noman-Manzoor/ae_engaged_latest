@@ -9,17 +9,18 @@ const CustomButton = ({ title, onPress }) => {
       style={{
         width: '80%',
         height: 50,
-        borderRadius: 40,
+        borderRadius: 16,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
         borderColor: '#ab713c',
         borderWidth: 1,
+        color: '#707070'
       }}
       onPress={onPress}
     >
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#707070' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -37,23 +38,23 @@ const AboutScreen = () => {
         </TouchableOpacity>
 
         <Image
-         source={require('../../../assets/images/logo2.png')}
+          source={require('../../../assets/images/logo2.png')}
           style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5 }}
         />
         <Text style={{
-          fontSize: 20, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
+          fontSize: 20, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c', color: '#707070',
           borderWidth: 1
         }}>About</Text>
       </View>
 
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, paddingTop: 25, alignItems: 'center' }}>
         <CustomButton
           title="About Anxiously Engaged"
-        onPress={() => navigation.navigate('About AE Engaged')}
+          onPress={() => navigation.navigate('About AE Engaged')}
         />
         <CustomButton
           title="Classes"
-        onPress={() => navigation.navigate('About AE Classes')}
+          onPress={() => navigation.navigate('About AE Classes')}
         />
       </View>
     </View>

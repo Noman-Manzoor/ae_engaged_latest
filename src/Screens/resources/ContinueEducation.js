@@ -23,63 +23,62 @@ const ContinueEducation = ({ navigation }) => {
   };
 
   return (
-    <>
-      <ScrollView>
-        <View style={{ flex: 1 }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, backgroundColor: '#90b1c2' }}>
-            {/* Back Arrow */}
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Ionicons name="ios-arrow-back" size={30} color="white" />
-            </TouchableOpacity>
+    <View style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        {/* Header */}
+        <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, backgroundColor: '#90b1c2' }}>
+          {/* Back Arrow */}
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="ios-arrow-back" size={30} color="white" />
+          </TouchableOpacity>
 
-            <Image
-              source={require('../../../assets/images/logo.png')}
-              style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text style={{ fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'center' }}>
-                Resources &gt; Continue Education
-              </Text>
-            </View>
+          <Image
+            source={require('../../../assets/images/logo2.png')}
+            style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
+          />
+          <View style={{ flex: 1 }}>
+            <Text style={{ color: '#707070', fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
+              Resources &gt; Continuing Education
+            </Text>
           </View>
+        </View>
 
-          {/* Content */}
-          <ScrollView contentContainerStyle={{ padding: 16 }}>
-            <Image
-              source={require('../../../assets/images/resource_continue_education.png')}
-              style={{ width: '100%', height: 150, marginBottom: 10 }}
-              resizeMode='contain'
-            />
+        {/* Content */}
+        <View style={{ paddingBottom: 16 }}>
+          <Image
+            source={require('../../../assets/images/resource_continue_education.png')}
+            style={{ width: '100%', height: 200, marginBottom: 10 }}
 
-            <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
-            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Continue Education</Text>
-            <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
+          />
 
-            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 20, marginBottom: 50 }}>
-              These are some helpful resources to help you continue to learn about marriage and becoming one.
-            </Text>
+          <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
+          <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10, color: '#707070' }}>Continuing Education</Text>
+          <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
-            {/* HRU */}
-            <TouchableOpacity onPress={handleHRUPress}>
-              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#90b1c2', marginBottom: 10 }}>Healthy Relationships Utah</Text>
-            </TouchableOpacity>
-            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
-              Offers free research-based workshops
-            </Text>
+          <Text style={{ color: '#707070', fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 20, marginBottom: 50, paddingLeft: 25, paddingRight: 15 }}>
+            These are some helpful resources to help you continue to learn about marriage and becoming one.
+          </Text>
 
-            {/* UMC */}
-            <TouchableOpacity onPress={handleUMCPress}>
-              <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#90b1c2', marginBottom: 10 }}>Utah Marriage Commission</Text>
-            </TouchableOpacity>
-            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 20 }}>
-              Podcasts, webinars, events, relationship inventory, and more
-            </Text>
+          {/* HRU */}
+          <TouchableOpacity onPress={handleHRUPress}>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 15 }}>Healthy Relationships Utah</Text>
+          </TouchableOpacity>
+          <Text style={{ color: '#707070', fontSize: 16, marginLeft: 25, marginRight: 10, marginBottom: 20 }}>
+            Offers free research-based workshops
+          </Text>
 
-          </ScrollView>
+          {/* UMC */}
+          <TouchableOpacity onPress={handleUMCPress}>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 15 }}>Utah Marriage Commission</Text>
+          </TouchableOpacity>
+          <Text style={{ color: '#707070', fontSize: 16, marginLeft: 25, marginRight: 10, marginBottom: 20 }}>
+            Podcasts, webinars, events, relationship inventory, and more
+          </Text>
         </View>
       </ScrollView>
+
       <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} />
-    </>
+    </View>
   );
 };
 

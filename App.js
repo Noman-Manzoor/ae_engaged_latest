@@ -89,6 +89,13 @@ import Signup from './src/auth/SignUp';
 import WorkShopGoalReminder from './src/Screens/settings/WorkShopGoalReminder';
 import BoosterGoalReminder from './src/Screens/settings/BoosterGoalReminder';
 import StartBoosterReminder from './src/Screens/settings/StartBoosterReminder';
+import WorkShopReminder from './src/Screens/settings/WorkShopReminder';
+import SexualAnatomy from './src/Screens/workshop/workbook/lessons/lesson3Topics/SexualAnatomy';
+import SexualExpectation from './src/Screens/workshop/workbook/lessons/lesson3Topics/SexualExpectation';
+import Goal3 from './src/Screens/workshop/workbook/lessons/lesson3Topics/Goal3';
+import Completion from './src/Screens/workshop/workbook/lessons/lesson5/Completion';
+import BoosterCompletion from './src/Screens/booster/lesson5/BoosterCompletion';
+// import Completion from './src/Screens/workshop/workbook/lessons/lesson5/completion';
 
 const Stack = createStackNavigator();
 
@@ -105,10 +112,11 @@ export default function App() {
     });
 
     const responseListener = Notifications.addNotificationResponseReceivedListener(response => {
-      console.log(response);
+      // console.log(response);
+      navigation.navigate('Home');
     });
-     // This sets the behavior for foreground notifications
-     Notifications.setNotificationHandler({
+    // This sets the behavior for foreground notifications
+    Notifications.setNotificationHandler({
       handleNotification: async () => ({
         shouldShowAlert: true,
         shouldPlaySound: false,
@@ -151,112 +159,118 @@ export default function App() {
 
           {/* {isLoggedIn ? (
             <> */}
-             <Stack.Screen name="Login" component={Login} />
-              <Stack.Screen name="Signup" component={Signup} />
-              <Stack.Screen name="Home" component={HomeScreen} />
-              <Stack.Screen name="Workshop" component={WorkShopScreen} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Workshop" component={WorkShopScreen} />
 
-              <Stack.Screen name="Booster" component={BoosterScreen} />
-              <Stack.Screen name="Booster welcome" component={BoosterStart} />
-              <Stack.Screen name="Booster Instructins" component={BoosterInstructins} />
-              <Stack.Screen name="Booster weekly Goals" component={BoosterWeeklyGoals} />
+          <Stack.Screen name="Booster" component={BoosterScreen} />
+          <Stack.Screen name="Booster welcome" component={BoosterStart} />
+          <Stack.Screen name="Booster Instructins" component={BoosterInstructins} />
+          <Stack.Screen name="Booster weekly Goals" component={BoosterWeeklyGoals} />
 
-              <Stack.Screen name="Booster Lesson1 Topics" component={BoosterLesson1Topics} />
-              <Stack.Screen name="Booster Lesson1 principle" component={B_Lesson1_Principle} />
-              <Stack.Screen name="Booster Lesson1 CP_Time" component={B_Lessn1_CPTime} />
-              <Stack.Screen name="Booster Lesson1 Goals" component={B_Lesson1_Goals} />
+          <Stack.Screen name="Booster Lesson1 Topics" component={BoosterLesson1Topics} />
+          <Stack.Screen name="Booster Lesson1 principle" component={B_Lesson1_Principle} />
+          <Stack.Screen name="Booster Lesson1 CP_Time" component={B_Lessn1_CPTime} />
+          <Stack.Screen name="Booster Lesson1 Goals" component={B_Lesson1_Goals} />
 
-              <Stack.Screen name="Booster Lesson2 Topics" component={BoosterLesson2Topics} />
-              <Stack.Screen name="Booster Lesson2 principle" component={B_Lesson2_Principle} />
-              <Stack.Screen name="Booster Lesson2 CP_Time" component={B_Lessn2_CPTime} />
-              <Stack.Screen name="Booster Lesson2 Goals" component={B_Lesson2_Goals} />
+          <Stack.Screen name="Booster Lesson2 Topics" component={BoosterLesson2Topics} />
+          <Stack.Screen name="Booster Lesson2 principle" component={B_Lesson2_Principle} />
+          <Stack.Screen name="Booster Lesson2 CP_Time" component={B_Lessn2_CPTime} />
+          <Stack.Screen name="Booster Lesson2 Goals" component={B_Lesson2_Goals} />
 
-              <Stack.Screen name="Booster Lesson3 Topics" component={BoosterLesson3Topics} />
-              <Stack.Screen name="Booster Lesson3 principle" component={B_Lesson3_Principle} />
-              <Stack.Screen name="Booster Lesson3 CP_Time" component={B_Lessn3_CPTime} />
-              <Stack.Screen name="Booster Lesson3 Goals" component={B_Lesson3_Goals} />
-
-
-              <Stack.Screen name="Booster Lesson4 Topics" component={BoosterLesson4Topics} />
-              <Stack.Screen name="Booster Lesson4 principle" component={B_Lesson4_Principle} />
-              <Stack.Screen name="Booster Lesson4 CP_Time" component={B_Lessn4_CPTime} />
-              <Stack.Screen name="Booster Lesson4 Goals" component={B_Lesson4_Goals} />
-
-              <Stack.Screen name="Booster Lesson5 Topics" component={BoosterLesson5Topics} />
-              <Stack.Screen name="Booster Lesson5 principle" component={B_Lesson5_Principle} />
-              <Stack.Screen name="Booster Lesson5 CP_Time" component={B_Lessn5_CPTime} />
-              <Stack.Screen name="Booster Lesson5 Goals" component={B_Lesson5_Goals} />
-
-              <Stack.Screen name="About" component={AboutScreen} />
-              <Stack.Screen name="Resources" component={ResourcesScreen} />
-
-              <Stack.Screen name="Evaluation" component={EvaluationScreen} />
-              <Stack.Screen name="Evaluation feedback" component={Feedback} />
-              <Stack.Screen name="Workshop Evaluation" component={WorshopEvaluation} />
-              <Stack.Screen name="Booster Evaluation" component={BoosterEvalution} />
-
-              <Stack.Screen name="Settings" component={SettingsScreen} />
-              <Stack.Screen name="WorkShopGoalReminder" component={WorkShopGoalReminder} />
-              <Stack.Screen name="BoosterGoalReminder" component={BoosterGoalReminder} />
-              <Stack.Screen name="StartBoosterReminder" component={StartBoosterReminder} />
-
-              
-              <Stack.Screen name="welcome WorkBook" component={WelcomeWorkBook} />
-              <Stack.Screen name="welcome Work Book" component={WorkBookStart} />
-              <Stack.Screen name="Bottom NavigationButtons" component={NavigationButtons} />
-              <Stack.Screen name="Workbook Lessons" component={WorkbookLessonsScreens} />
-
-              <Stack.Screen name="Lesson 1 Topics" component={Lesson1} />
-              <Stack.Screen name="Lesson 1 Topic CT_CiardiPoem" component={CT_CiardiPoem} />
-              <Stack.Screen name="Lesson 1 Topic CT_CiardiPoem2" component={CT_CiardiPoem2} />
-              <Stack.Screen name="Lesson 1 Topic CT_WeOverMe" component={CT_WeOverMe} />
-              <Stack.Screen name="Lesson 1 Topic Principles" component={Principles} />
-              <Stack.Screen name="Lesson 1 Topic Goals" component={Goals} />
-
-              <Stack.Screen name="Lesson 2 Topics" component={Lesson2} />
-              <Stack.Screen name="Lesson 2 deep listening" component={DeepListening} />
-              <Stack.Screen name="Lesson 2 soft start" component={SoftStart} />
-              <Stack.Screen name="Lesson 2 warn signs" component={WarningSigns} />
-              <Stack.Screen name="Lesson 2 principles" component={Principles2} />
-              <Stack.Screen name="Lesson 2 goals" component={Goals2} />
-
-              <Stack.Screen name="Lesson 3 Topics" component={Lesson3} />
-              <Stack.Screen name="Lesson 3 MentalPrep" component={MentalPrep} />
-              <Stack.Screen name="Lesson 3 EmotionalPrep" component={EmotionalPrep} />
-              <Stack.Screen name="Lesson 3 PhsicalPrep" component={PhysicalPrep} />
-              <Stack.Screen name="Lesson 3 SpiritualPrep" component={SpiritualPrep} />
-              <Stack.Screen name="Lesson 3 SexualResponseCycle" component={SexualResponseCycle} />
-              <Stack.Screen name="Lesson 3 HollandQuote" component={ElderQuote} />
-              <Stack.Screen name="Lesson 3 Resources" component={Resources3} />
-
-              <Stack.Screen name="Lesson 4 Topics" component={Lesson4} />
-              <Stack.Screen name="Lesson 4 EqualPartnership" component={EqualPartnership} />
-              <Stack.Screen name="Lesson 4 Divorce" component={Divorce} />
-              <Stack.Screen name="Lesson 4 Principles" component={Principles4} />
-              <Stack.Screen name="Lesson 4 Goals" component={Goals4} />
-
-              <Stack.Screen name="Lesson 5 Topics" component={Lesson5} />
-              <Stack.Screen name="Lesson 5 Magic6Hour" component={Magic6Hours} />
-              <Stack.Screen name="Lesson 5 MaritalSupport" component={MaritalSupport} />
-              <Stack.Screen name="Lesson 5 Serving" component={Serving} />
-              <Stack.Screen name="Lesson 5 Therapist" component={Therapist} />
-              <Stack.Screen name="Lesson 5 Resources" component={Resources5} />
-              <Stack.Screen name="Lesson 5 Principles" component={Principles5} />
-              <Stack.Screen name="Lesson 5 Goals" component={Goals5} />
+          <Stack.Screen name="Booster Lesson3 Topics" component={BoosterLesson3Topics} />
+          <Stack.Screen name="Booster Lesson3 principle" component={B_Lesson3_Principle} />
+          <Stack.Screen name="Booster Lesson3 CP_Time" component={B_Lessn3_CPTime} />
+          <Stack.Screen name="Booster Lesson3 Goals" component={B_Lesson3_Goals} />
 
 
-              <Stack.Screen name="About AE Engaged" component={AboutAeEngaged} />
-              <Stack.Screen name="About AE Classes" component={Classes} />
-              <Stack.Screen name="supplemental lessons" component={SupplementalLessons} />
-              <Stack.Screen name="Resources social media" component={SocialMedia} />
-              <Stack.Screen name="Resources continue Education" component={ContinueEducation} />
-              <Stack.Screen name="Resources Financial" component={Financial} />
-              <Stack.Screen name="Resources HowToFight" component={HowToFight} />
-            {/* </>
+          <Stack.Screen name="Booster Lesson4 Topics" component={BoosterLesson4Topics} />
+          <Stack.Screen name="Booster Lesson4 principle" component={B_Lesson4_Principle} />
+          <Stack.Screen name="Booster Lesson4 CP_Time" component={B_Lessn4_CPTime} />
+          <Stack.Screen name="Booster Lesson4 Goals" component={B_Lesson4_Goals} />
+
+          <Stack.Screen name="Booster Lesson5 Topics" component={BoosterLesson5Topics} />
+          <Stack.Screen name="Booster Lesson5 principle" component={B_Lesson5_Principle} />
+          <Stack.Screen name="Booster Lesson5 CP_Time" component={B_Lessn5_CPTime} />
+          <Stack.Screen name="Booster Lesson5 Goals" component={B_Lesson5_Goals} />
+          <Stack.Screen name="Booster Completion" component={BoosterCompletion} />
+
+          <Stack.Screen name="About" component={AboutScreen} />
+          <Stack.Screen name="Resources" component={ResourcesScreen} />
+
+          <Stack.Screen name="Evaluation" component={EvaluationScreen} />
+          <Stack.Screen name="Evaluation feedback" component={Feedback} />
+          <Stack.Screen name="Workshop Evaluation" component={WorshopEvaluation} />
+          <Stack.Screen name="Booster Evaluation" component={BoosterEvalution} />
+
+          <Stack.Screen name="Settings" component={SettingsScreen} />
+          <Stack.Screen name="WorkShopGoalReminder" component={WorkShopGoalReminder} />
+          <Stack.Screen name="WorkShopReminder" component={WorkShopReminder} />
+          <Stack.Screen name="BoosterGoalReminder" component={BoosterGoalReminder} />
+          <Stack.Screen name="StartBoosterReminder" component={StartBoosterReminder} />
+
+
+          <Stack.Screen name="welcome WorkBook" component={WelcomeWorkBook} />
+          <Stack.Screen name="welcome Work Book" component={WorkBookStart} />
+          <Stack.Screen name="Bottom NavigationButtons" component={NavigationButtons} />
+          <Stack.Screen name="Workbook Lessons" component={WorkbookLessonsScreens} />
+
+          <Stack.Screen name="Lesson 1 Topics" component={Lesson1} />
+          <Stack.Screen name="Lesson 1 Topic CT_CiardiPoem" component={CT_CiardiPoem} />
+          <Stack.Screen name="Lesson 1 Topic CT_CiardiPoem2" component={CT_CiardiPoem2} />
+          <Stack.Screen name="Lesson 1 Topic CT_WeOverMe" component={CT_WeOverMe} />
+          <Stack.Screen name="Lesson 1 Topic Principles" component={Principles} />
+          <Stack.Screen name="Lesson 1 Topic Goals" component={Goals} />
+
+          <Stack.Screen name="Lesson 2 Topics" component={Lesson2} />
+          <Stack.Screen name="Lesson 2 deep listening" component={DeepListening} />
+          <Stack.Screen name="Lesson 2 soft start" component={SoftStart} />
+          <Stack.Screen name="Lesson 2 warn signs" component={WarningSigns} />
+          <Stack.Screen name="Lesson 2 principles" component={Principles2} />
+          <Stack.Screen name="Lesson 2 goals" component={Goals2} />
+
+          <Stack.Screen name="Lesson 3 Topics" component={Lesson3} />
+          <Stack.Screen name="Lesson 3 MentalPrep" component={MentalPrep} />
+          <Stack.Screen name="Lesson 3 EmotionalPrep" component={EmotionalPrep} />
+          <Stack.Screen name="Lesson 3 PhsicalPrep" component={PhysicalPrep} />
+          <Stack.Screen name="Lesson 3 SpiritualPrep" component={SpiritualPrep} />
+          <Stack.Screen name="Lesson 3 SexualResponseCycle" component={SexualResponseCycle} />
+          <Stack.Screen name="Lesson 3 SexualAnatomy" component={SexualAnatomy} />
+          <Stack.Screen name="Lesson 3 SexualExpectations" component={SexualExpectation} />
+          <Stack.Screen name="Lesson 3 HollandQuote" component={ElderQuote} />
+          <Stack.Screen name="Lesson 3 Resources" component={Resources3} />
+          <Stack.Screen name="Lesson 3 Goals" component={Goal3} />
+
+          <Stack.Screen name="Lesson 4 Topics" component={Lesson4} />
+          <Stack.Screen name="Lesson 4 EqualPartnership" component={EqualPartnership} />
+          <Stack.Screen name="Lesson 4 Divorce" component={Divorce} />
+          <Stack.Screen name="Lesson 4 Principles" component={Principles4} />
+          <Stack.Screen name="Lesson 4 Goals" component={Goals4} />
+
+          <Stack.Screen name="Lesson 5 Topics" component={Lesson5} />
+          <Stack.Screen name="Lesson 5 Magic6Hour" component={Magic6Hours} />
+          <Stack.Screen name="Lesson 5 MaritalSupport" component={MaritalSupport} />
+          <Stack.Screen name="Lesson 5 Serving" component={Serving} />
+          <Stack.Screen name="Lesson 5 Therapist" component={Therapist} />
+          <Stack.Screen name="Lesson 5 Resources" component={Resources5} />
+          <Stack.Screen name="Lesson 5 Principles" component={Principles5} />
+          <Stack.Screen name="Lesson 5 Goals" component={Goals5} />
+          <Stack.Screen name="Lesson 5 Completion" component={Completion} />
+
+
+          <Stack.Screen name="About AE Engaged" component={AboutAeEngaged} />
+          <Stack.Screen name="About AE Classes" component={Classes} />
+          <Stack.Screen name="supplemental lessons" component={SupplementalLessons} />
+          <Stack.Screen name="Resources social media" component={SocialMedia} />
+          <Stack.Screen name="Resources continue Education" component={ContinueEducation} />
+          <Stack.Screen name="Resources Financial" component={Financial} />
+          <Stack.Screen name="Resources HowToFight" component={HowToFight} />
+          {/* </>
           ) : (
             <> */}
-             
-            {/* </>
+
+          {/* </>
           )} */}
         </Stack.Navigator>
         <StatusBar style="auto" />

@@ -9,17 +9,18 @@ const CustomButton = ({ title, onPress }) => {
       style={{
         width: '80%',
         height: 50,
-        borderRadius: 40,
+        borderRadius: 16,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
         borderColor: '#ab713c',
         borderWidth: 1,
+        color: '#707070'
       }}
       onPress={onPress}
     >
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#707070' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -37,27 +38,27 @@ const EvaluationScreen = () => {
         </TouchableOpacity>
 
         <Image
-         source={require('../../../assets/images/logo2.png')}
+          source={require('../../../assets/images/logo2.png')}
           style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5 }}
         />
         <Text style={{
           fontSize: 20, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
-          borderWidth: 1
+          borderWidth: 1, color: '#707070'
         }}>Evaluation</Text>
       </View>
 
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, paddingTop: 25, alignItems: 'center' }}>
         <CustomButton
           title=" Workshop Evaluation"
-        onPress={() => navigation.navigate('Workshop Evaluation')}
+          onPress={() => navigation.navigate('Workshop Evaluation')}
         />
         <CustomButton
           title="Booster Evaluation"
-        onPress={() => navigation.navigate('Booster Evaluation')}
+          onPress={() => navigation.navigate('Booster Evaluation')}
         />
         <CustomButton
           title="Feedback"
-        onPress={() => navigation.navigate('Evaluation feedback')}
+          onPress={() => navigation.navigate('Evaluation feedback')}
         />
       </View>
     </View>

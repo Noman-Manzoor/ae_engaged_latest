@@ -6,12 +6,12 @@ import { Ionicons } from '@expo/vector-icons';
 const Resources3 = ({ navigation }) => {
   const handleBackPress = () => {
     // Handle the back navigation logic
-    navigation.navigate('Lesson 3 SpiritualPrep');
+    navigation.navigate('Lesson 3 HollandQuote');
   };
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Lesson 1 Topic Goals');
+    navigation.navigate('Lesson 3 Goals');
   };
 
   return (
@@ -25,60 +25,65 @@ const Resources3 = ({ navigation }) => {
             </TouchableOpacity>
 
             <Image
-                 source={require('../../../../../../assets/images/logo.png')}
-              style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
+              source={require('../../../../../../assets/images/logo2.png')}
+              style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
             />
             <View style={{ flex: 1 }}>
-              <Text style={{ fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'center' }}>
-                workshop &gt; Lesson 3 &gt; Resources
+
+              <Text style={{ fontSize: 10, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
+                Workbook &gt; Lesson 3 &gt; Resources
               </Text>
             </View>
           </View>
 
           {/* Content */}
-          <ScrollView contentContainerStyle={{ padding: 16 }}>
-          <Image
-                         source={require('../../../../../../assets/images/lesson3_mental_prep.png')}
-                            style={{ width: '100%', height: 158, marginBottom: 10 }}
-                            resizeMode='contain'
-                        />
+          <ScrollView contentContainerStyle={{ paddingBottom: 16 }}>
+            <Image
+              source={require('../../../../../../assets/images/lesson3_mental_prep.png')}
+              style={{ width: '100%', height: 158, marginBottom: 10 }}
+            />
 
             <Text style={{ fontSize: 16, marginBottom: 10, textAlign: 'center' }}>Lesson 3: Becoming One Through Marital Sexuality</Text>
             <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Resources on Marital Sexuality</Text>
             <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
-          
+
             {/* Additional Questions */}
-             {/* Website & Podcasts */}
-             <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 10 }}>
-              <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Website & Podcasts{'\n'}</Text>
-              • The Marriage Bed (TheMarriageBed.com){'\n'}
-              • Strengthening Marriage (www.strengtheningmarriage.com){'\n'}
-              • The Sexual Mindfulness Project (www.chelomleavi.com){'\n'}
-              • Jennifer Finlayson-Fife podcast archive (finlayson-fife.com){'\n'}
-            </Text>
+            {/* Website & Podcasts */}
+            <View style={{ paddingLeft: 20, paddingRight: 20 }}>
 
-            {/* Articles */}
-            <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 10 }}>
-              <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Articles{'\n'}</Text>
-              • “Of Souls, Symbols, and Sacraments” Jeffrey R. Holland, BYU Devotional, January 12, 1988{'\n'}
-              • “Love and Marriage” Wendy Watson Nelson, Worldwide YSA Devotional, January 8, 2017{'\n'}
-            </Text>
 
-            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Books</Text>
-      <Text style={{ marginLeft: 10 }}>
-        • Sexual Wholeness in Marriage: An LDS perspective on integrating sexuality and spirituality in our marriages, Dean M. Busby, Jason S. Carroll, Chelom Leavitt{'\n'}
-        • Becoming One: Intimacy in marriage, Robert F. Stahmann, Wayne R. Young, Julie G. Grover{'\n'}
-        • And They Were Not Ashamed: Strengthening marriage through sexual fulfillment, Laura M. Brotherson{'\n'}
-        • The Act of Marriage, Tim LaHaye{'\n'}
-        • Real Intimacy: A couple’s guide to healthy, genuine sexuality, Kristin B. Hodson, Alisha Worthington, Thomas G. Harrison{'\n'}
-        • From Honeymoon to Happily Ever After: 23 keys to prepare for a sextraordinary marriage, Laura M. Brotherson
-      </Text>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Books</Text>
+              <Text style={{ marginLeft: 10 }}>
+                • Sexual Wholeness in Marriage: An LDS perspective on integrating sexuality and spirituality in our marriages, Dean M. Busby, Jason S. Carroll, Chelom Leavitt{'\n'}
+                • Becoming One: Intimacy in marriage, Robert F. Stahmann, Wayne R. Young, Julie G. Grover{'\n'}
+                • And They Were Not Ashamed: Strengthening marriage through sexual fulfillment, Laura M. Brotherson{'\n'}
+                • The Act of Marriage, Tim LaHaye{'\n'}
+                • Real Intimacy: A couple’s guide to healthy, genuine sexuality, Kristin B. Hodson, Alisha Worthington, Thomas G. Harrison{'\n'}
+                • From Honeymoon to Happily Ever After: 23 keys to prepare for a sextraordinary marriage, Laura M. Brotherson
+              </Text>
+
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 10 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Website & Podcasts{'\n'}</Text>
+                • The Marriage Bed (TheMarriageBed.com){'\n'}
+                • Strengthening Marriage (www.strengtheningmarriage.com){'\n'}
+                • The Sexual Mindfulness Project (www.chelomleavi.com){'\n'}
+                • Jennifer Finlayson-Fife podcast archive (finlayson-fife.com){'\n'}
+              </Text>
+
+              {/* Articles */}
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 10 }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Articles{'\n'}</Text>
+                • “Of Souls, Symbols, and Sacraments” Jeffrey R. Holland, BYU Devotional, January 12, 1988{'\n'}
+                • “Love and Marriage” Wendy Watson Nelson, Worldwide YSA Devotional, January 8, 2017{'\n'}
+              </Text>
+
+            </View>
           </ScrollView>
         </View>
       </ScrollView>
-      {/* <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} /> */}
+      <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} />
     </>
   );
 };

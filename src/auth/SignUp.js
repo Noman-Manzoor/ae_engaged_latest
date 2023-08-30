@@ -14,7 +14,7 @@ const Signup = ({ navigation }) => {
         try {
             const response = await createUserWithEmailAndPassword(auth, email, password);
             navigation.navigate('Home');
-            
+
         } catch (error) {
             // console.error(error);
             alert(`Signup failed: user already exist`);
@@ -31,23 +31,23 @@ const Signup = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image
-                source={require('../../assets/images/logo.png')}
+                source={require('../../assets/images/logo2.png')}
                 style={styles.logo}
             />
             <Text style={styles.title}>Signup</Text>
 
-            <TextInput 
-                placeholder="Email" 
-                value={email} 
-                onChangeText={setEmail} 
+            <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={setEmail}
                 style={styles.input}
             />
 
-            <TextInput 
-                placeholder="Password" 
-                value={password} 
-                onChangeText={setPassword} 
-                secureTextEntry 
+            <TextInput
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
                 style={styles.input}
             />
 
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     },
     loginContainer: {
         marginTop: 15,
-        marginBottom:20,
+        marginBottom: 20,
         alignItems: 'center'
     }
 });

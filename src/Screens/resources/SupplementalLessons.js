@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -8,18 +8,21 @@ const CustomButton = ({ title, onPress }) => {
     <TouchableOpacity
       style={{
         width: '90%',
-        height: 50,
-        borderRadius: 40,
+        height: 60,
+        borderRadius: 16,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
         borderColor: '#ab713c',
         borderWidth: 1,
+        color: '#707070',
+        paddingLeft: 20,
+        paddingRight: 20
       }}
       onPress={onPress}
     >
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#707070', textAlign: 'center' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -42,15 +45,17 @@ const SupplementalLessons = () => {
 
         <Image
           source={require('../../../assets/images/logo2.png')}
-          style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5 }}
+          style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5, marginRight: 3 }}
         />
-        <Text style={{
-          fontSize: 20, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
-          borderWidth: 1
-        }}>Supplemental Lessons</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={{ color: '#707070', fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
+            Resources &gt; Supplemental Lessons
+          </Text>
+        </View>
+
       </View>
 
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center' }}>
         <CustomButton
           title="Birth Control"
           onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-beb4-d800-abf7-ffbeff3a0000/ae-lesson-birth-control')}
@@ -87,7 +92,16 @@ const SupplementalLessons = () => {
           title="Getting spiritual confirmation to Marry"
           onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-bee6-d800-abf7-fffeaef70000/ae-online-spritual-confirmation-v2-pdf')}
         />
-      </View>
+        <CustomButton
+          title="Financial"
+          onPress={() => navigation.navigate('Resources Financial')}
+        />
+        <CustomButton
+          title="How to Fight"
+          onPress={() => navigation.navigate('Resources HowToFight')}
+        />
+      </ScrollView>
+
     </View>
   );
 };

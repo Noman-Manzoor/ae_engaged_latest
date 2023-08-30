@@ -24,8 +24,8 @@ const Login = ({ navigation }) => {
             navigation.reset({
                 index: 0,
                 routes: [{ name: 'Home' }],
-              });
-              
+            });
+
 
         } catch (error) {
             // console.error(error);
@@ -42,23 +42,23 @@ const Login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image
-                source={require('../../assets/images/logo.png')}
+                source={require('../../assets/images/logo2.png')}
                 style={styles.logo}
             />
             <Text style={styles.title}>Login</Text>
 
-            <TextInput 
-                placeholder="Email" 
-                value={email} 
-                onChangeText={setEmail} 
+            <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={setEmail}
                 style={styles.input}
             />
 
-            <TextInput 
-                placeholder="Password" 
-                value={password} 
-                onChangeText={setPassword} 
-                secureTextEntry 
+            <TextInput
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
                 style={styles.input}
             />
 
@@ -73,7 +73,7 @@ const Login = ({ navigation }) => {
                     <Button title="Signup" onPress={goToSignUp} color="#7FB3D5" />
                 </>
             )}
-            
+
         </View>
     );
 };
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     },
     signupContainer: {
         marginTop: 15,
-        marginBottom:20,
+        marginBottom: 20,
         alignItems: 'center'
     }
 });

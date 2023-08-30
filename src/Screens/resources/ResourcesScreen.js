@@ -9,17 +9,20 @@ const CustomButton = ({ title, onPress }) => {
       style={{
         width: '90%',
         height: 50,
-        borderRadius: 40,
+        borderRadius: 16,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
         borderColor: '#ab713c',
         borderWidth: 1,
+        color: '#707070',
+        paddingLeft: 20,
+        paddingRight: 20
       }}
       onPress={onPress}
     >
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#707070', textAlign: 'center' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -37,36 +40,37 @@ const ResourcesScreen = () => {
         </TouchableOpacity>
 
         <Image
-      source={require('../../../assets/images/logo2.png')}
-          style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5 }}
+          source={require('../../../assets/images/logo2.png')}
+          style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5 }}
         />
         <Text style={{
-          fontSize: 20, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
-          borderWidth: 1
+          fontSize: 15, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
+          borderWidth: 1, color: '#707070'
         }}>Resources</Text>
       </View>
 
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, paddingTop: 25, alignItems: 'center' }}>
         <CustomButton
           title="Supplemental Lessons"
-        onPress={() => navigation.navigate('supplemental lessons')}
+          onPress={() => navigation.navigate('supplemental lessons')}
         />
         <CustomButton
           title="Social Media"
-        onPress={() => navigation.navigate('Resources social media')}
+          onPress={() => navigation.navigate('Resources social media')}
         />
         <CustomButton
           title="Continuing Education"
-        onPress={() => navigation.navigate('Resources continue Education')}
+          onPress={() => navigation.navigate('Resources continue Education')}
         />
         <CustomButton
-          title="Financial"
-        onPress={() => navigation.navigate('Resources Financial')}
+          title="Sexuality Resources"
+          onPress={() => navigation.navigate('Lesson 3 Resources')}
         />
         <CustomButton
-          title="How to Fight"
-        onPress={() => navigation.navigate('Resources HowToFight')}
+          title="Marriage Strengthening Resources"
+          onPress={() => navigation.navigate('Lesson 5 Resources')}
         />
+
       </View>
     </View>
   );

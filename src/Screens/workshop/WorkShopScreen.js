@@ -6,19 +6,20 @@ const CustomButton = ({ title, onPress }) => {
   return (
     <TouchableOpacity
       style={{
-        width: '80%',
-        height: 50,
-        borderRadius: 40,
+        width: '90%',
+        height: 60,
+        borderRadius: 16,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
         borderColor: '#ab713c',
         borderWidth: 1,
+        color: '#707070'
       }}
       onPress={onPress}
     >
-      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#707070' }}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -35,25 +36,25 @@ const WorkShopScreen = ({ navigation }) => {
 
         <Image
           source={require('../../../assets/images/logo2.png')}
-          style={{ width: 60, height: 60, borderRadius: 80, marginLeft:5 }}
+          style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5 }}
         />
         <Text style={{
-          fontSize: 20, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
-          borderWidth: 1
-        }}>Workbook</Text>
+          fontSize: 15, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
+          borderWidth: 1, color: '#707070'
+        }}>Workshop</Text>
       </View>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, paddingTop: 20, alignItems: 'center' }}>
         <CustomButton
           title="Workbook"
-          onPress={() => navigation.navigate('welcome Work Book')}
+          onPress={() => navigation.navigate('Workbook Lessons')}
         />
         <CustomButton
           title="Weekly Goals"
-        onPress={() => navigation.navigate('Workbook Lessons')}
+          onPress={() => navigation.navigate('Workbook Lessons')}
         />
         <CustomButton
           title="Evaluation"
-        onPress={() => navigation.navigate('Workshop Evaluation')}
+          onPress={() => navigation.navigate('Workshop Evaluation')}
         />
       </View>
     </View>

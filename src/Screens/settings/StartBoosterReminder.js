@@ -8,14 +8,21 @@ import {
   TouchableOpacity,
   Button,
   Alert,
+  Switch,
+  StyleSheet,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import Icon from 'react-native-vector-icons/Ionicons';
+import SwitchToggle from 'react-native-switch-toggle';
 
 const StartBoosterReminder = ({ navigation }) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [time, setTime] = useState('');
+  const [scheduledNotificationIds, setScheduledNotificationIds] = useState([]);
+  const [isNotificationsEnabled, setNotificationsEnabled] = useState(false);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const [selectedDate, setSelectedDate] = useState({ MM: 'MM', DD: 'DD', YYYY: 'YYYY' });
+  const [time, setTime] = useState('1:00');
+  const [ampm, setAMPM] = useState('AM');
   const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
 
   const showDatePicker = () => {
@@ -26,11 +33,6 @@ const StartBoosterReminder = ({ navigation }) => {
     setDatePickerVisibility(false);
   };
 
-  const handleDatePicked = (date) => {
-    setSelectedDate(date);
-    hideDatePicker();
-  };
-
   const showTimePicker = () => {
     setTimePickerVisibility(true);
   };
@@ -39,52 +41,82 @@ const StartBoosterReminder = ({ navigation }) => {
     setTimePickerVisibility(false);
   };
 
-  const handleTimePicked = (time) => {
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
-    setTime(`${hours}:${minutes}`);
-    hideTimePicker();
+  const handleDatePicked = (date) => {
+    setSelectedDate({
+      MM: String(date.getMonth() + 1).padStart(2, '0'),
+      DD: String(date.getDate()).padStart(2, '0'),
+      YYYY: String(date.getFullYear()),
+    });
+    hideDatePicker();
   };
-  const askNotificationPermission = async () => {
-    const { status: existingStatus } =
-      await Notifications.getPermissionsAsync();
-    let finalStatus = existingStatus;
 
-    // If no existing permission, ask the user.
-    if (existingStatus !== 'granted') {
-      const { status } = await Notifications.requestPermissionsAsync();
-      finalStatus = status;
-    }
-
-    // If the user did not grant permissions
-    if (finalStatus !== 'granted') {
-      alert('Failed to get push token for push notification!');
-      return false;
-    }
-    return true;
+  const handleTimePicked = (pickedTime) => {
+    const hours = pickedTime.getHours();
+    const minutes = pickedTime.getMinutes();
+    const isPM = hours >= 12;
+    const displayHours = isPM ? hours - 12 : hours;
+    setTime(`${displayHours}:${minutes < 10 ? '0' + minutes : minutes}`);
+    setAMPM(isPM ? 'PM' : 'AM');
+    hideTimePicker();
   };
 
   const setReminder = async () => {
-    const hasPermission = await askNotificationPermission();
-    if (!hasPermission) return;
+    if (!isNotificationsEnabled) {
+      Alert.alert('Error', 'Please enable notifications first.');
+      return;
+    }
 
-    const [hours, minutes] = time.split(':').map(Number);
-    const reminderDate = new Date(selectedDate);
-    reminderDate.setHours(hours, minutes);
+    if (!selectedDate || !time) {
+      Alert.alert('Error', 'Please select a date and time first.');
+      return;
+    }
 
-    console.log(reminderDate);
+    // Cancel existing notifications if any
+    await cancelScreenSpecificNotifications();
 
-    await Notifications.scheduleNotificationAsync({
+    // Combine selectedDate and time into a JavaScript Date object
+    const [hour, minute] = time.split(':');
+    const reminderDate = new Date(
+      parseInt(selectedDate.YYYY),
+      parseInt(selectedDate.MM) - 1,  // JavaScript months are 0-indexed
+      parseInt(selectedDate.DD),
+      hour,
+      minute
+    );
+
+    // Schedule the notification
+    const notificationId = await Notifications.scheduleNotificationAsync({
       content: {
         title: 'Start Booster Reminder!',
-        body: `It's time to start the AE Booster as planned on ${reminderDate.toDateString()} at ${time}.`,
+        body: `It's time to start the AE Booster as planned on ${reminderDate.toDateString()} at ${time} ${ampm}.`,
       },
-      trigger: reminderDate,
-      // trigger: null,
+      trigger: {
+        date: reminderDate,
+        repeats: false,  // set to true if you want it to repeat
+      },
+      // trigger: null
     });
 
-    console.log(`Reminder set for ${reminderDate.toDateString()} at ${time}`);
-    Alert.alert(`Reminder set for ${reminderDate.toDateString()} at ${time}`);
+    // Update the state to keep track of notification IDs
+    setScheduledNotificationIds([...scheduledNotificationIds, notificationId]);
+
+    Alert.alert('Success', `Reminder set for ${reminderDate.toDateString()} at ${time} ${ampm}`);
+  };
+
+  const cancelScreenSpecificNotifications = async () => {
+    for (let id of scheduledNotificationIds) {
+      await Notifications.cancelScheduledNotificationAsync(id);
+    }
+    setScheduledNotificationIds([]); // clear the IDs
+  };
+
+  const toggleNotifications = async () => {
+    const newStatus = !isNotificationsEnabled;
+    setNotificationsEnabled(newStatus);
+
+    if (!newStatus) {
+      await cancelScreenSpecificNotifications();
+    }
   };
 
   return (
@@ -102,31 +134,29 @@ const StartBoosterReminder = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
               <Ionicons name='ios-arrow-back' size={30} color='white' />
             </TouchableOpacity>
-
             <Image
               source={require('../../../assets/images/logo2.png')}
               style={{
-                width: 60,
-                height: 60,
+                width: 50,
+                height: 50,
                 borderRadius: 30,
-                marginRight: 16,
+                marginRight: 3,
                 marginLeft: 5,
               }}
             />
             <View style={{ flex: 1 }}>
               <Text
                 style={{
-                  fontSize: 12,
+                  fontSize: 9,
                   backgroundColor: 'white',
                   paddingVertical: 5,
                   paddingHorizontal: 10,
                   borderRadius: 15,
                   borderColor: '#ab713c',
                   borderWidth: 1,
-                  textAlign: 'center',
                 }}
               >
-                Start Booster &gt; Reminder
+                Settings &gt; Start Booster Reminder
               </Text>
             </View>
           </View>
@@ -142,55 +172,98 @@ const StartBoosterReminder = ({ navigation }) => {
                 borderBottomColor: '#ab713c',
                 borderBottomWidth: 1,
                 marginBottom: 10,
+                marginTop: 20,
               }}
             />
             <View style={{ paddingLeft: 16, paddingRight: 16 }}>
-              <Text
+              <View
                 style={{
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  marginBottom: 10,
-                  marginLeft: 10,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
                 }}
               >
-                Start Booster Reminder
-              </Text>
+                <Text
+                  style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}
+                >
+                  Start Booster Reminder
+                </Text>
+                <Switch
+                  trackColor={{ false: "#767577", true: "#81b0ff" }}
+                  thumbColor={isNotificationsEnabled ? "#f4f3f4" : "#f4f3f4"}
+                  ios_backgroundColor="#3e3e3e"
+                  onValueChange={toggleNotifications}
+                  value={isNotificationsEnabled}
+                />
+              </View>
               <View
                 style={{
                   width: '20%',
                   borderBottomColor: '#90b1c2',
                   borderBottomWidth: 10,
                   marginBottom: 10,
-                  marginLeft: 10,
                 }}
               />
-              <Text style={{ fontSize: 14, marginBottom: 20, marginLeft: 10 }}>
-                Choose a day about 3-6 months after your wedding date to start
-                the AE Booster.
+              <Text
+                style={{ fontSize: 14, marginBottom: 10 }}
+              >
+                Choose a day about 3-6 months after your wedding date to start the AE Booster.
               </Text>
 
-              <TouchableOpacity
-                onPress={showDatePicker}
-                style={{ marginBottom: 20 }}
-              >
-                <Text>Select Date: {selectedDate.toDateString()}</Text>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
+                Date:
+              </Text>
+              <TouchableOpacity onPress={showDatePicker} style={styles.touchableContainer}>
+                <View style={styles.timeContainer}>
+                  <View style={styles.boxContainer}>
+                    <View style={styles.box}>
+                      <Text style={styles.boxText}>{selectedDate.MM}</Text>
+                    </View>
+                    <View style={styles.box}>
+                      <Text style={styles.boxText}>{selectedDate.DD}</Text>
+                    </View>
+                    <View style={styles.box}>
+                      <Text style={styles.boxText}>{selectedDate.YYYY}</Text>
+                    </View>
+                  </View>
+                </View>
+
+                <DateTimePickerModal
+                  isVisible={isDatePickerVisible}
+                  mode="date"
+                  onConfirm={handleDatePicked}
+                  onCancel={hideDatePicker}
+                />
               </TouchableOpacity>
 
-              <TouchableOpacity
-                onPress={showTimePicker}
-                style={{ marginBottom: 20 }}
-              >
-                <Text>Set Time: {time}</Text>
+              <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginTop: 10 }}>
+                Time:
+              </Text>
+              <TouchableOpacity onPress={showTimePicker} style={styles.touchableContainer}>
+                <View style={styles.timeContainer}>
+                  <View style={styles.boxContainer}>
+                    <View style={styles.box}>
+                      <Text style={styles.boxText}>{time}</Text>
+                    </View>
+                    <View style={styles.box}>
+                      <Text style={styles.boxText}>{ampm}</Text>
+                    </View>
+                  </View>
+                </View>
+
+                <DateTimePickerModal
+                  isVisible={isTimePickerVisible}
+                  mode="time"
+                  onConfirm={handleTimePicked}
+                  onCancel={hideTimePicker}
+                />
               </TouchableOpacity>
 
-              <Button title='Set Reminder' onPress={setReminder} />
-
-              <DateTimePickerModal
-                isVisible={isDatePickerVisible}
-                mode='date'
-                onConfirm={handleDatePicked}
-                onCancel={hideDatePicker}
-              />
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity onPress={setReminder} style={styles.button} >
+                  <Text style={styles.buttonText}>Set Reminder</Text>
+                </TouchableOpacity>
+              </View>
 
               <DateTimePickerModal
                 isVisible={isTimePickerVisible}
@@ -205,5 +278,50 @@ const StartBoosterReminder = ({ navigation }) => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    marginTop: 20,
+    alignSelf: 'center',
+  },
+  button: {
+    width: 200,
+    borderWidth: 2,
+    borderColor: '#ab713c',
+    borderRadius: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 16,
+  },
+  touchableContainer: {
+    marginBottom: 20,
+  },
+  timeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  timeText: {
+    marginRight: 10,
+  },
+  boxContainer: {
+    flexDirection: 'row',
+  },
+  box: {
+    borderWidth: 1,
+    borderColor: 'black',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginHorizontal: 5,
+  },
+  boxText: {
+    fontSize: 16,
+    color: '#ab713c',
+  },
+});
+
+
 
 export default StartBoosterReminder;

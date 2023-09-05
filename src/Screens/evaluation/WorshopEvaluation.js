@@ -92,7 +92,7 @@ const WorshopEvaluation = ({ navigation }) => {
                 borderWidth: 1,
                 color: '#707070'
               }}
-              onPress={() => console.log("Button pressed!")} // Replace with your function to handle button press
+              onPress={() => Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSc_N4xYAbm6I44ThjmGM9Pp0m9gGx37tnlkn8dqIsLt4h6XjA/viewform?usp=sf_link')}
             >
               <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#707070' }}>Start Evaluation</Text>
             </TouchableOpacity>

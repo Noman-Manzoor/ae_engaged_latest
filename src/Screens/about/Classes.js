@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import NavigationButtons from '../../components/NavigationButtons';
 import { Ionicons } from '@expo/vector-icons';
+import { Linking } from 'react-native';
+
 
 const Classes = ({ navigation }) => {
   const handleBackPress = () => {
@@ -68,7 +70,7 @@ const Classes = ({ navigation }) => {
                 borderWidth: 1,
                 color: '#707070'
               }}
-              onPress={() => console.log("Button pressed!")} // Replace with your function to handle button press
+              onPress={() => Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfu1rqi6BMGK8EeY1NjzPapSK0S9R5soCYUxbBhYc5lC6Te2Q/viewform?usp=sf_link')}
             >
               <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#707070' }}>Signup for here!</Text>
             </TouchableOpacity>

@@ -73,7 +73,7 @@ const Resources3 = ({ navigation }) => {
               </Text>
 
               {/* Articles */}
-              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 10 }}>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 40 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Articles{'\n'}</Text>
                 • “Of Souls, Symbols, and Sacraments” Jeffrey R. Holland, BYU Devotional, January 12, 1988{'\n'}
                 • “Love and Marriage” Wendy Watson Nelson, Worldwide YSA Devotional, January 8, 2017{'\n'}

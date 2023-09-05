@@ -90,7 +90,7 @@ const Feedback = ({ navigation }) => {
                 borderWidth: 1,
                 color: '#707070'
               }}
-              onPress={() => console.log("Button pressed!")} // Replace with your function to handle button press
+              onPress={() => Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSd3NlI3KjO2cqrVuVPX4A3_O1cFGM2a2KyJ1TFmjTc1-6uvvw/viewform?usp=sf_link')}
             >
               <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#707070' }}>Leave Feedback</Text>
             </TouchableOpacity>

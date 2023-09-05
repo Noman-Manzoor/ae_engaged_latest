@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView, TouchableOpacity, Linking } from 'react-
 import NavigationButtons from '../../components/NavigationButtons';
 import { Ionicons } from '@expo/vector-icons';
 
+
 const BoosterEvalution = ({ navigation }) => {
   const handleBackPress = () => {
     // Handle the back navigation logic
@@ -81,7 +82,7 @@ const BoosterEvalution = ({ navigation }) => {
             borderWidth: 1,
             color: '#707070'
           }}
-          onPress={() => console.log("Button pressed!")} // Replace with your function to handle button press
+          onPress={() => Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSfdM0cKBmau0Eq7_PWhhhL5Gesw3PpJ3oMP4Uo78qFXj8QCjA/viewform?usp=sf_link')}
         >
           <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#707070' }}>Start Evaluation</Text>
         </TouchableOpacity>

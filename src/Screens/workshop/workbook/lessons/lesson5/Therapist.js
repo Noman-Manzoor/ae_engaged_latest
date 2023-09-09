@@ -24,10 +24,12 @@ const Therapist = ({ navigation }) => {
               <Ionicons name="ios-arrow-back" size={30} color="white" />
             </TouchableOpacity>
 
-            <Image
-              source={require('../../../../../../assets/images/logo2.png')}
-              style={{ width: 50, height: 50, borderRadius: 30, marginRight: 2, marginLeft: 2 }}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+              <Image
+                source={require('../../../../../../assets/images/logo2.png')}
+                style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+              />
+            </TouchableOpacity>
             <View style={{ flex: 1 }}>
               <Text style={{ fontSize: 10, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
                 Workshop &gt; Lesson 5 &gt; Therapist
@@ -50,7 +52,7 @@ const Therapist = ({ navigation }) => {
 
             {/* Articles on How to Choose a Good Marriage Therapist */}
             <View style={{ paddingLeft: 25, paddingRight: 20 }}>
-              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 30 }}>
+              <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 50 }}>
                 <Text>Here are some articles giving guidelines on how to choose a good marriage therapist:</Text>
                 {'\n'}
                 • “How to Find a Couples Therapist Who Can Actually Help You” by Kyle Benson (Gottman Institute 2020){'\n'}

@@ -55,10 +55,13 @@ const BoosterLesson5Topics = ({ navigation }) => {
                     <Ionicons name="ios-arrow-back" size={30} color="white" />
                 </TouchableOpacity>
 
-                <Image
-                    source={require('../../../../assets/images/logo2.png')}
-                    style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                    <Image
+                        source={require('../../../../assets/images/logo2.png')}
+                        style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+                    />
+                </TouchableOpacity>
+
                 <View style={{ flex: 1 }}>
 
                     <Text style={{ fontSize: 9, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1 }}>

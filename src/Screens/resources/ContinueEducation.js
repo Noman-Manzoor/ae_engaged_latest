@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 const ContinueEducation = ({ navigation }) => {
   const handleBackPress = () => {
     // Handle the back navigation logic
-    navigation.navigate('Resources social media');
+    navigation.navigate('Resources');
   };
 
   const handleForwardPress = () => {
@@ -32,10 +32,12 @@ const ContinueEducation = ({ navigation }) => {
             <Ionicons name="ios-arrow-back" size={30} color="white" />
           </TouchableOpacity>
 
-          <Image
-            source={require('../../../assets/images/logo2.png')}
-            style={{ width: 60, height: 60, borderRadius: 30, marginRight: 16, marginLeft: 5 }}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <Image
+              source={require('../../../assets/images/logo2.png')}
+              style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+            />
+          </TouchableOpacity>
           <View style={{ flex: 1 }}>
             <Text style={{ color: '#707070', fontSize: 12, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
               Resources &gt; Continuing Education
@@ -61,7 +63,7 @@ const ContinueEducation = ({ navigation }) => {
 
           {/* HRU */}
           <TouchableOpacity onPress={handleHRUPress}>
-            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 15 }}>Healthy Relationships Utah</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 15, color: 'blue', textDecorationLine: 'underline' }}>Healthy Relationships Utah</Text>
           </TouchableOpacity>
           <Text style={{ color: '#707070', fontSize: 16, marginLeft: 25, marginRight: 10, marginBottom: 20 }}>
             Offers free research-based workshops
@@ -69,7 +71,7 @@ const ContinueEducation = ({ navigation }) => {
 
           {/* UMC */}
           <TouchableOpacity onPress={handleUMCPress}>
-            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 15 }}>Utah Marriage Commission</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 15, color: 'blue', textDecorationLine: 'underline' }}>Utah Marriage Commission</Text>
           </TouchableOpacity>
           <Text style={{ color: '#707070', fontSize: 16, marginLeft: 25, marginRight: 10, marginBottom: 20 }}>
             Podcasts, webinars, events, relationship inventory, and more

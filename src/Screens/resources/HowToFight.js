@@ -64,10 +64,13 @@ const HowToFight = () => {
           <Ionicons name="ios-arrow-back" size={30} color="white" />
         </TouchableOpacity>
 
-        <Image
-          source={require('../../../assets/images/logo2.png')}
-          style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 3 }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Image
+            source={require('../../../assets/images/logo2.png')}
+            style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+          />
+        </TouchableOpacity>
+
         <View style={{ flex: 1 }}>
           <Text style={{ color: '#707070', fontSize: 9, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'center' }}>
             Resources  &gt; Supplemental Lessons &gt; How To Fight
@@ -76,10 +79,7 @@ const HowToFight = () => {
       </View>
 
       <View style={{ flex: 1, paddingTop: 25, alignItems: 'center' }}>
-        <CustomButton
-          title="How to Fight Well"
-          onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000183-e74d-d2ff-a7b3-ffcf30550001/how-to-fight-1-pdf')}
-        />
+        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 30, color: 'white' }}>How to Fight Well</Text>
         <CustomButton
           title="Part 1: The Four Horsemen"
           onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000183-e74d-d2ff-a7b3-ffcf30550001/how-to-fight-1-pdf')}

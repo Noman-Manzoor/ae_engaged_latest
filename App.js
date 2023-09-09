@@ -95,6 +95,8 @@ import SexualExpectation from './src/Screens/workshop/workbook/lessons/lesson3To
 import Goal3 from './src/Screens/workshop/workbook/lessons/lesson3Topics/Goal3';
 import Completion from './src/Screens/workshop/workbook/lessons/lesson5/Completion';
 import BoosterCompletion from './src/Screens/booster/lesson5/BoosterCompletion';
+import WorkshopGoalsLessonScreen from './src/Screens/workshop/workbook/lessons/WorkshopGoalsLessonScreen';
+import BoosterGoalsWithoutWelcome from './src/Screens/booster/BoosterGoalsWithoutWelcome';
 // import Completion from './src/Screens/workshop/workbook/lessons/lesson5/completion';
 
 const Stack = createStackNavigator();
@@ -168,6 +170,7 @@ export default function App() {
           <Stack.Screen name="Booster welcome" component={BoosterStart} />
           <Stack.Screen name="Booster Instructins" component={BoosterInstructins} />
           <Stack.Screen name="Booster weekly Goals" component={BoosterWeeklyGoals} />
+          <Stack.Screen name="Booster weekly Goals without welcome" component={BoosterGoalsWithoutWelcome} />
 
           <Stack.Screen name="Booster Lesson1 Topics" component={BoosterLesson1Topics} />
           <Stack.Screen name="Booster Lesson1 principle" component={B_Lesson1_Principle} />
@@ -215,6 +218,7 @@ export default function App() {
           <Stack.Screen name="welcome Work Book" component={WorkBookStart} />
           <Stack.Screen name="Bottom NavigationButtons" component={NavigationButtons} />
           <Stack.Screen name="Workbook Lessons" component={WorkbookLessonsScreens} />
+          <Stack.Screen name="Workbook goals Lessons" component={WorkshopGoalsLessonScreen} />
 
           <Stack.Screen name="Lesson 1 Topics" component={Lesson1} />
           <Stack.Screen name="Lesson 1 Topic CT_CiardiPoem" component={CT_CiardiPoem} />

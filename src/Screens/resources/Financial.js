@@ -64,10 +64,13 @@ const Financial = () => {
           <Ionicons name="ios-arrow-back" size={30} color="white" />
         </TouchableOpacity>
 
-        <Image
-          source={require('../../../assets/images/logo2.png')}
-          style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 3 }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Image
+            source={require('../../../assets/images/logo2.png')}
+            style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+          />
+        </TouchableOpacity>
+
         <View style={{ flex: 1 }}>
           <Text style={{ color: '#707070', fontSize: 9, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1 }}>
             Resources  &gt; Supplemental Lessons &gt; Financial
@@ -77,24 +80,22 @@ const Financial = () => {
 
       <ScrollView>
         <View style={{ flex: 1, paddingTop: 25, alignItems: 'center' }}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 30, color: 'white' }}>Shared Financial Stewardship</Text>
+
           <CustomButton
-            title={`Shared Financial Stewardship`}
+            title={`Part 1 : A Gospel-Based Financial Foundation`}
             onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-bec4-d5eb-a777-bee464c20000/ae-fs-a-gospel-based-financial-foundation')}
           />
           <CustomButton
-            title={`Lesson 1 : A Gospel-Based Financial Foundation`}
-            onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-bec4-d5eb-a777-bee464c20000/ae-fs-a-gospel-based-financial-foundation')}
-          />
-          <CustomButton
-            title="Lesson 2: Understanding our Financial Backgrounds"
+            title="Part 1: Understanding our Financial Backgrounds"
             onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-bec6-d800-abf7-fffe32350000/ae-fs-understanding-our-financial-backgrounds')}
           />
           <CustomButton
-            title={`Lesson 1 : Practicing Financial Transparency`}
+            title={`Part 1 : Practicing Financial Transparency`}
             onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-bec7-deb6-a77f-feef97460000/ae-fs-practicing-financial-transparency')}
           />
           <CustomButton
-            title={`Lesson 1 : Planning for Your Financial Future`}
+            title={`Part 1 : Planning for Your Financial Future`}
             onPress={() => handleLinkPress('https://anxiouslyengaged.byu.edu/00000176-bec9-deb6-a77f-fee984a20000/ae-fs-planning-for-your-financial-future')}
           />
         </View>

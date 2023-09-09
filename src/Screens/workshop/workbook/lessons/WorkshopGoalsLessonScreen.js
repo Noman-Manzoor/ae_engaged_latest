@@ -39,7 +39,7 @@ const CustomButton = ({ title, onPress }) => {
 };
 
 
-const WorkbookLessonsScreens = ({ navigation }) => {
+const WorkshopGoalsLessonScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: '#90b1c2' }}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -74,10 +74,10 @@ const WorkbookLessonsScreens = ({ navigation }) => {
                     title="Welcome: How to Your Guide"
                 // onPress={() => navigation.navigate('Screen1')}
                 /> */}
-                    <CustomButton
+                    {/* <CustomButton
                         title={`Welcome : Your How to Guide`}
                         onPress={() => navigation.navigate('welcome Work Book')}
-                    />
+                    /> */}
                     <CustomButton
                         title={`Lesson 1 : Becoming one in Marriage`}
                         onPress={() => navigation.navigate('Lesson 1 Topics')}
@@ -109,4 +109,4 @@ Growing Together
     );
 };
 
-export default WorkbookLessonsScreens;
+export default WorkshopGoalsLessonScreen;

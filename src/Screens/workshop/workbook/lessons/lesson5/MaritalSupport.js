@@ -88,10 +88,12 @@ const MaritalSupport = ({ navigation }) => {
               <Ionicons name="ios-arrow-back" size={30} color="white" />
             </TouchableOpacity>
 
-            <Image
-              source={require('../../../../../../assets/images/logo2.png')}
-              style={{ width: 50, height: 50, borderRadius: 30, marginRight: 2, marginLeft: 2 }}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+              <Image
+                source={require('../../../../../../assets/images/logo2.png')}
+                style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+              />
+            </TouchableOpacity>
             <View style={{ flex: 1 }}>
               <Text style={{ fontSize: 10, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
                 Workshop &gt; Lesson 5 &gt; CT: Marital Support

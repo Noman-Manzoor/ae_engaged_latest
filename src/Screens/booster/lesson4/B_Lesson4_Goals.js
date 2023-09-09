@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView, TextInput, Button, Alert, TouchableOpaci
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect } from 'react';
+import NavigationButtons from '../../../components/NavigationButtons'
 
 const B_Lesson4_Goals = ({ navigation }) => {
     const screenName = "B_Lesson4_Goals";
@@ -68,12 +69,12 @@ const B_Lesson4_Goals = ({ navigation }) => {
 
     const handleBackPress = () => {
         // Handle the back navigation logic
-        navigation.navigate('Booster Lesson1 Topics');
+        navigation.navigate('Booster Lesson4 Topics');
     };
 
     const handleForwardPress = () => {
         // Handle the forward navigation logic
-        navigation.navigate('Lesson 1 Topic CT_CiardiPoem2');
+        navigation.navigate('Booster Lesson4 Topics');
     };
 
     return (
@@ -87,10 +88,13 @@ const B_Lesson4_Goals = ({ navigation }) => {
                         </TouchableOpacity>
 
 
-                        <Image
-                            source={require('../../../../assets/images/logo2.png')}
-                            style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
-                        />
+                        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                            <Image
+                                source={require('../../../../assets/images/logo2.png')}
+                                style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+                            />
+                        </TouchableOpacity>
+
                         <View style={{ flex: 1 }}>
 
                             <Text style={{ fontSize: 9, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
@@ -195,7 +199,7 @@ const B_Lesson4_Goals = ({ navigation }) => {
                     </View>
                 </View >
             </ScrollView>
-            {/* <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} /> */}
+            <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} />
 
         </>
     );

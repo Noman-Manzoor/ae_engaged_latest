@@ -62,10 +62,12 @@ const Lesson3 = ({ navigation }) => {
                     <Ionicons name="ios-arrow-back" size={30} color="white" />
                 </TouchableOpacity>
 
-                <Image
-                    source={require('../../../../../assets/images/logo2.png')}
-                    style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                    <Image
+                        source={require('../../../../../assets/images/logo2.png')}
+                        style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+                    />
+                </TouchableOpacity>
                 <View style={{ flex: 1 }}>
 
                     <Text style={{ color: '#707070', fontSize: 10, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1 }}>
@@ -100,10 +102,10 @@ const Lesson3 = ({ navigation }) => {
                         title="Sexual Response Cycle"
                         onPress={() => navigation.navigate('Lesson 3 SexualResponseCycle')}
                     />
-                    <CustomButton
+                    {/* <CustomButton
                         title="Sexual Anatomy"
                         onPress={() => navigation.navigate('Lesson 3 SexualAnatomy')}
-                    />
+                    /> */}
                     <CustomButton
                         title="Elder Holland Quote"
                         onPress={() => navigation.navigate('Lesson 3 HollandQuote')}

@@ -56,7 +56,7 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
             <Image
                 source={require('../../assets/images/logo2.png')}
-                style={{ width: 200, height: 200, borderRadius: 100, marginBottom: 20 }}
+                style={{ width: 150, height: 150, borderRadius: 100, marginBottom: 20 }}
             />
             <ScrollView
                 contentContainerStyle={{

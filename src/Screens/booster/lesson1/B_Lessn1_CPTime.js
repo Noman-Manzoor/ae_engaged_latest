@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView, TextInput, Button, Alert, TouchableOpaci
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect } from 'react';
+import NavigationButtons from '../../../components/NavigationButtons'
 
 const B_Lessn1_CPTime = ({ navigation }) => {
   const screenName = "B_Lessn1_CPTime";
@@ -73,7 +74,7 @@ const B_Lessn1_CPTime = ({ navigation }) => {
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Lesson 1 Topic CT_CiardiPoem2');
+    navigation.navigate('Booster Lesson1 Topics');
   };
 
   return (
@@ -86,10 +87,14 @@ const B_Lessn1_CPTime = ({ navigation }) => {
               <Ionicons name="ios-arrow-back" size={30} color="white" />
             </TouchableOpacity>
 
-            <Image
-              source={require('../../../../assets/images/logo2.png')}
-              style={{ width: 50, height: 50, borderRadius: 30, marginRight: 3, marginLeft: 5 }}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+              <Image
+                source={require('../../../../assets/images/logo2.png')}
+                style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+              />
+            </TouchableOpacity>
+
+
             <View style={{ flex: 1 }}>
 
               <Text style={{ fontSize: 9, backgroundColor: 'white', paddingVertical: 5, paddingHorizontal: 10, borderRadius: 15, borderColor: '#ab713c', borderWidth: 1, textAlign: 'left' }}>
@@ -183,7 +188,7 @@ const B_Lessn1_CPTime = ({ navigation }) => {
 
         </View >
       </ScrollView>
-      {/* <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} /> */}
+      <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} />
 
     </>
   );

@@ -37,10 +37,13 @@ const EvaluationScreen = () => {
           <Ionicons name="ios-arrow-back" size={30} color="white" />
         </TouchableOpacity>
 
-        <Image
-          source={require('../../../assets/images/logo2.png')}
-          style={{ width: 60, height: 60, borderRadius: 80, marginLeft: 5 }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Image
+            source={require('../../../assets/images/logo2.png')}
+            style={{ width: 50, height: 50, borderRadius: 80, marginLeft: 5, marginRight: 5 }}
+          />
+        </TouchableOpacity>
+
         <Text style={{
           fontSize: 15, marginLeft: 5, borderRadius: 40, backgroundColor: 'white', width: "70%", paddingLeft: 20, borderColor: '#ab713c',
           borderWidth: 1, color: '#707070'

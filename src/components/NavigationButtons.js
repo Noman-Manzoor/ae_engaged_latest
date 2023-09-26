@@ -9,16 +9,24 @@ const NavigationButtons = ({ onBackPress, onForwardPress }) => {
         <TouchableOpacity
           onPress={onBackPress}
           style={{
-            backgroundColor: '#ab713c', // Red circle background
-            borderRadius: 30, // Make it a circle
+            backgroundColor: '#ab713c',
+            borderRadius: 30,
             width: 40, // Width of the circle
             height: 40, // Height of the circle
-            justifyContent: 'center', // Center the text horizontally
-            alignItems: 'center' // Center the text vertically
+            justifyContent: 'center', // Center the children horizontally
+            alignItems: 'center', // Center the children vertically
           }}
         >
-          <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold', lineHeight: 40, textAlign: 'center' }}>&lt;</Text>
+          <Text style={{
+            color: 'white',
+            fontSize: 30,
+            fontWeight: 'bold',
+            lineHeight: 35, // Same as fontSize to help with vertical alignment
+            borderColor: 'red',
+            textAlign: 'center'
+          }}>&lt;</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
           onPress={onForwardPress}
           style={{
@@ -30,7 +38,7 @@ const NavigationButtons = ({ onBackPress, onForwardPress }) => {
             alignItems: 'center' // Center the text vertically
           }}
         >
-          <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold', lineHeight: 40, textAlign: 'center' }}>&gt;</Text>
+          <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold', lineHeight: 35, textAlign: 'center' }}>&gt;</Text>
         </TouchableOpacity>
 
       </View>

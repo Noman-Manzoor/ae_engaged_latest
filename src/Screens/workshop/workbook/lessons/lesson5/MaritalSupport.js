@@ -119,7 +119,7 @@ const MaritalSupport = ({ navigation }) => {
               <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Discussion Questions:</Text>
                 {'\n'}
-                • How can we make time each week for the “Magic 6 Hours”?{'\n'}
+                {/* • How can we make time each week for the “Magic 6 Hours”?{'\n'}
                 • How can we make pairings and reunions more special?{'\n'}
                 {'  '}o What does a “stress-reducing conversation” look like to me?{'\n'}
                 {'  '}o Do I like to talk about work/school right when I get home? Wait until later?{'\n'}
@@ -128,7 +128,7 @@ const MaritalSupport = ({ navigation }) => {
                 • What are some new date ideas we’d like to try?{'\n'}
                 • How do we feel about the idea of a “State of the Union” meeting?{'\n'}
                 {'  '}o What do we think about starting that now, before we get married?{'\n'}
-                {'\n'}
+                {'\n'} */}
                 • What are some ground rules about how we will talk to others about our marriage?{'\n'}
                 • Who are some people that we could include in our “go-to” marriage support system?{'\n'}
                 • What do we think about the idea of a marriage mentor?{'\n'}

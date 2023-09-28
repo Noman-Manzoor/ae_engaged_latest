@@ -6,12 +6,12 @@ import { Ionicons } from '@expo/vector-icons';
 const Feedback = ({ navigation }) => {
   const handleBackPress = () => {
     // Handle the back navigation logic
-    navigation.navigate('supplemental lessons');
+    navigation.navigate('Evaluation');
   };
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Resources continue Education');
+    navigation.navigate('Evaluation');
   };
 
   // Function to handle the press of the Facebook button

@@ -102,10 +102,10 @@ const Lesson3 = ({ navigation }) => {
                         title="Sexual Response Cycle"
                         onPress={() => navigation.navigate('Lesson 3 SexualResponseCycle')}
                     />
-                    {/* <CustomButton
-                        title="Sexual Anatomy"
-                        onPress={() => navigation.navigate('Lesson 3 SexualAnatomy')}
-                    /> */}
+                    <CustomButton
+                        title="Sexual Expectations"
+                        onPress={() => navigation.navigate('Lesson 3 SexualExpectations')}
+                    />
                     <CustomButton
                         title="Elder Holland Quote"
                         onPress={() => navigation.navigate('Lesson 3 HollandQuote')}

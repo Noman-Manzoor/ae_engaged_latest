@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 const ElderQuote = ({ navigation }) => {
   const handleBackPress = () => {
     // Handle the back navigation logic
-    navigation.navigate('Lesson 3 SexualResponseCycle');
+    navigation.navigate('Lesson 3 SexualExpectations');
   };
 
   const handleForwardPress = () => {

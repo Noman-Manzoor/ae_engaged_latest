@@ -11,7 +11,7 @@ const SocialMedia = ({ navigation }) => {
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Resources continue Education');
+    navigation.navigate('Resources');
   };
 
   // Function to handle the press of the Facebook button

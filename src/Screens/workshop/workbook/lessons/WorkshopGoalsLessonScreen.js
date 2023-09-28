@@ -79,26 +79,26 @@ const WorkshopGoalsLessonScreen = ({ navigation }) => {
                         onPress={() => navigation.navigate('welcome Work Book')}
                     /> */}
                     <CustomButton
-                        title={`Lesson 1 : Becoming one in Marriage`}
+                        title={`Goal 1 : Becoming one in Marriage`}
                         onPress={() => navigation.navigate('Lesson 1 Topics')}
                     />
 
                     <CustomButton
-                        title={`Lesson 2: Becoming One Through Effective Communication`}
+                        title={`Goal 2: Becoming One Through Effective Communication`}
                         onPress={() => navigation.navigate('Lesson 2 Topics')}
                     />
                     <CustomButton
-                        title={`Lesson 3: Becoming One Through Marital Sexuality`}
+                        title={`Goal 3: Becoming One Through Marital Sexuality`}
                         onPress={() => navigation.navigate('Lesson 3 Topics')}
                     />
                     <CustomButton
-                        title={`Lesson 4: Becoming One Through
+                        title={`Goal 4: Becoming One Through
 Equal Partnership &
 Complete Commitment`}
                         onPress={() => navigation.navigate('Lesson 4 Topics')}
                     />
                     <CustomButton
-                        title={`Lesson 5: Becoming One Through
+                        title={`Goal 5: Becoming One Through
 Growing Together
 `}
                         onPress={() => navigation.navigate('Lesson 5 Topics')}

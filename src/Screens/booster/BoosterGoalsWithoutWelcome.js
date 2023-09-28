@@ -68,25 +68,25 @@ const BoosterGoalsWithoutWelcome = ({ navigation }) => {
                     onPress={() => navigation.navigate('Booster welcome')}
                 /> */}
                 <CustomButton
-                    title={`Lesson 1 : Becoming one in Marriage`}
+                    title={`Goal 1 : Becoming one in Marriage`}
                     onPress={() => navigation.navigate('Booster Lesson1 Topics')}
                 />
                 <CustomButton
-                    title={`Lesson 2: Becoming One Through Effective Communication`}
+                    title={`Goal 2: Becoming One Through Effective Communication`}
                     onPress={() => navigation.navigate('Booster Lesson2 Topics')}
                 />
                 <CustomButton
-                    title={`Lesson 3: Becoming One Through Marital Sexuality`}
+                    title={`Goal 3: Becoming One Through Marital Sexuality`}
                     onPress={() => navigation.navigate('Booster Lesson3 Topics')}
                 />
                 <CustomButton
-                    title={`Lesson 4: Becoming One Through
+                    title={`Goal 4: Becoming One Through
 Equal Partnership &
 Complete Commitment`}
                     onPress={() => navigation.navigate('Booster Lesson4 Topics')}
                 />
                 <CustomButton
-                    title={`Lesson 5: Becoming One Through
+                    title={`Goal 5: Becoming One Through
 Growing Together
 `}
                     onPress={() => navigation.navigate('Booster Lesson5 Topics')}

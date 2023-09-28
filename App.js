@@ -240,7 +240,7 @@ export default function App() {
           <Stack.Screen name="Lesson 3 PhsicalPrep" component={PhysicalPrep} />
           <Stack.Screen name="Lesson 3 SpiritualPrep" component={SpiritualPrep} />
           <Stack.Screen name="Lesson 3 SexualResponseCycle" component={SexualResponseCycle} />
-          <Stack.Screen name="Lesson 3 SexualAnatomy" component={SexualAnatomy} />
+          {/* <Stack.Screen name="Lesson 3 SexualAnatomy" component={SexualAnatomy} /> */}
           <Stack.Screen name="Lesson 3 SexualExpectations" component={SexualExpectation} />
           <Stack.Screen name="Lesson 3 HollandQuote" component={ElderQuote} />
           <Stack.Screen name="Lesson 3 Resources" component={Resources3} />

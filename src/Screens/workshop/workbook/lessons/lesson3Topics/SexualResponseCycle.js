@@ -11,7 +11,7 @@ const SexualResponseCycle = ({ navigation }) => {
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Lesson 3 SexualAnatomy');
+    navigation.navigate('Lesson 3 SexualExpectations');
   };
 
   return (

@@ -11,7 +11,7 @@ const ContinueEducation = ({ navigation }) => {
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Resources Financial');
+    navigation.navigate('Resources');
   };
 
   const handleHRUPress = () => {

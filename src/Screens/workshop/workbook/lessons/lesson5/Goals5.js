@@ -76,7 +76,7 @@ const Goals5 = ({ navigation }) => {
 
   const handleForwardPress = () => {
     // Handle the forward navigation logic
-    navigation.navigate('Lesson 5 Completion');
+    navigation.navigate('Lesson 5 Topics');
   };
 
   return (
@@ -196,7 +196,7 @@ const Goals5 = ({ navigation }) => {
           </ScrollView>
         </View>
       </ScrollView>
-      {/* <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} /> */}
+      <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} />
     </>
   );
 };

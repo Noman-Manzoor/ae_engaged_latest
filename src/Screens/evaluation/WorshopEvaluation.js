@@ -85,7 +85,7 @@ const WorshopEvaluation = ({ navigation }) => {
                 width: '80%',
                 height: 50,
                 borderRadius: 19,
-                marginLeft: 25,
+                marginLeft: 35,
 
                 backgroundColor: 'white',
                 justifyContent: 'center',

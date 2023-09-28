@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 const SexualExpectation = ({ navigation }) => {
     const handleBackPress = () => {
         // Handle the back navigation logic
-        navigation.navigate('Lesson 3 SexualAnatomy');
+        navigation.navigate('Lesson 3 SexualResponseCycle');
     };
 
     const handleForwardPress = () => {

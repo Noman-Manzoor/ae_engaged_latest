@@ -75,7 +75,7 @@ const BoosterEvalution = ({ navigation }) => {
             width: '80%',
             height: 50,
             borderRadius: 19,
-            marginLeft: 25,
+            marginLeft: 35,
 
             backgroundColor: 'white',
             justifyContent: 'center',
@@ -94,7 +94,7 @@ const BoosterEvalution = ({ navigation }) => {
         </Text>
 
       </ScrollView>
-      {/* <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} /> */}
+      <NavigationButtons onBackPress={handleBackPress} onForwardPress={handleForwardPress} />
     </View>
   );
 };

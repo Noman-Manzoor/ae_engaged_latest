@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 const Principles = ({ navigation }) => {
     const handleBackPress = () => {
         // Handle the back navigation logic
-        navigation.navigate('Lesson 2 warn signs');
+        navigation.navigate('Lesson 1 Topic CT_CiardiPoem');
     };
 
     const handleForwardPress = () => {

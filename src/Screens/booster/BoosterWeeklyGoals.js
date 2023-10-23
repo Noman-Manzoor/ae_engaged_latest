@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -62,7 +62,7 @@ const BoosterWeeklyGoals = ({ navigation }) => {
                 </View>
             </View>
 
-            <View style={{ flex: 1, paddingTop: 25, alignItems: 'center' }}>
+            <ScrollView contentContainerStyle={{ flexGrow: 1, paddingTop: 25, alignItems: 'center' }}>
                 <CustomButton
                     title={`Welcome: Booster Workbook`}
                     onPress={() => navigation.navigate('Booster welcome')}
@@ -91,7 +91,7 @@ Growing Together
 `}
                     onPress={() => navigation.navigate('Booster Lesson5 Topics')}
                 />
-            </View>
+            </ScrollView>
         </View>
     );
 };

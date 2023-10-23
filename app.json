@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "AE_Engaged",
-    "slug": "AE_Engaged",
+    "slug": "nomi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,12 +11,11 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "com.nomi1966.AE_Engaged",
       "supportsTablet": true,
+      "bundleIdentifier": "com.aeengaged.demo",
+
       "usesIcloudStorage": true,
       "buildNumber": "1.0.0"
     },
@@ -32,8 +31,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "65237210-42d4-45cc-bb10-795b76212321"
+        "projectId": "12c58833-0de7-4009-a227-fb2b9091ad7c"
       }
-    }
+    },
+    "owner": "mr_joker"
   }
 }

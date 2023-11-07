@@ -76,6 +76,13 @@ const CT_CiardiPoem = ({ navigation }) => {
                 is roofless around nothing.
               </Text>
 
+              <Text style={styles.paragraph}>
+                I am no more than upright and unset.
+                It is by falling in and in we make
+                the all-bearing point, for one another’s sake,
+                in faultless failing, raised by our own weight.
+              </Text>
+
             </View>
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 30, marginLeft: 10, marginTop: 20 }}></Text>
 

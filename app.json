@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "AE_Engaged",
+    "name": "Anxiously Engaged",
+    "description": "Anxiously Engaged: A Premarital Program for Latter-day Saints",
     "slug": "nomi",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.aeengaged.demo",

@@ -39,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <View style={{ flex: 1, backgroundColor: '#90b1c2', justifyContent: 'center', alignItems: 'center', paddingTop: 25 }}>
-            <TouchableOpacity
+            {/* <TouchableOpacity
                 style={{
                     position: 'absolute',
                     top: 10,
@@ -53,7 +53,7 @@ const HomeScreen = ({ navigation }) => {
                 onPress={logout}
             >
                 <Text style={{ fontSize: 14, fontWeight: 'bold' }}>Logout</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <Image
                 source={require('../../assets/images/logo2.png')}
                 style={{ width: 150, height: 150, borderRadius: 100, marginBottom: 20 }}

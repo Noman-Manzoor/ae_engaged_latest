@@ -23,6 +23,15 @@ const BoosterGoalReminder = ({ navigation }) => {
     const [time, setTime] = useState('1:00');
     const [ampm, setAMPM] = useState('AM');
     const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
+    const dayMapping = {
+        'Su': 'Sunday',
+        'M': 'Monday',
+        'Tu': 'Tuesday',
+        'W': 'Wednesday',
+        'Th': 'Thursday',
+        'F': 'Friday',
+        'Sa': 'Saturday',
+    };
     const [selectedDays, setSelectedDays] = useState({
         Sunday: false,
         Monday: false,
@@ -33,8 +42,12 @@ const BoosterGoalReminder = ({ navigation }) => {
         Saturday: false,
     });
 
-    const toggleDaySelection = (day) => {
-        setSelectedDays((prevDays) => ({ ...prevDays, [day]: !prevDays[day] }));
+    const toggleDaySelection = (abbreviatedDay) => {
+        const fullDayName = dayMapping[abbreviatedDay];
+        setSelectedDays((prevDays) => ({
+            ...prevDays,
+            [fullDayName]: !prevDays[fullDayName]
+        }));
     };
 
     const showTimePicker = () => {
@@ -65,13 +78,8 @@ const BoosterGoalReminder = ({ navigation }) => {
             return;
         }
 
-        let anyDaySelected = false;
-        for (let day in selectedDays) {
-            if (selectedDays[day]) {
-                anyDaySelected = true;
-                break;
-            }
-        }
+        let anyDaySelected = Object.values(selectedDays).some(isSelected => isSelected);
+
 
         if (!anyDaySelected) {
             Alert.alert('Error', 'Please select at least one day.');
@@ -79,43 +87,44 @@ const BoosterGoalReminder = ({ navigation }) => {
         }
 
         let newScheduledNotificationIds = [];
+        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-        for (let day in selectedDays) {
-            if (selectedDays[day]) {
+        for (let [day, isSelected] of Object.entries(selectedDays)) {
+            if (isSelected) {
                 let targetDate = new Date();
-                const [hours, minutes] = time.split(':');
-                targetDate.setHours(hours);
-                targetDate.setMinutes(minutes);
+                const [hour, minute] = time.split(':');
+                const hour24 = ampm === 'PM' ? (parseInt(hour, 10) % 12) + 12 : parseInt(hour, 10);
+                targetDate.setHours(hour24, parseInt(minute, 10), 0, 0);
 
-                const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 const targetDayIndex = daysOfWeek.indexOf(day);
                 const currentDayIndex = targetDate.getDay();
+                let dayDifference = targetDayIndex - currentDayIndex;
 
-                if (currentDayIndex > targetDayIndex) {
-                    targetDate.setDate(
-                        targetDate.getDate() + 7 - (currentDayIndex - targetDayIndex)
-                    );
-                } else {
-                    targetDate.setDate(
-                        targetDate.getDate() + (targetDayIndex - currentDayIndex)
-                    );
+                // Adjust for next week if it's already past the time today, or if today isn't the target day
+                if (dayDifference < 0 || (dayDifference === 0 && targetDate <= new Date())) {
+                    dayDifference += 7;
                 }
 
-                const notificationId = await Notifications.scheduleNotificationAsync({
-                    content: {
-                        title: 'Booster Goal Upcoming!',
-                        body: `Scheduled for  ${day} at ${time} ${ampm}. Stay on track with your objectives!`,
+                targetDate.setDate(targetDate.getDate() + dayDifference);
 
-                    },
-                    trigger: {
-                        dayOfWeek: targetDayIndex + 1,  // Sunday is 1, Monday is 2, etc.
-                        hour: parseInt(hours, 10),
-                        minute: parseInt(minutes, 10),
-                        repeats: true
-                    },
-                    // trigger: null
-                });
-                newScheduledNotificationIds.push(notificationId);
+                // Use the 'seconds' property for scheduling notifications
+                const secondsUntilTarget = (targetDate.getTime() - Date.now()) / 1000;
+
+                // Make sure we're not scheduling a notification in the past
+                if (secondsUntilTarget > 0) {
+                    // Schedule the notification
+                    const notificationId = await Notifications.scheduleNotificationAsync({
+                        content: {
+                            title: 'Booster Goal Upcoming!',
+                            body: `Scheduled for  ${day} at ${time} ${ampm}. Stay on track with your objectives!`,
+                        },
+                        trigger: {
+                            seconds: secondsUntilTarget,
+                            repeats: false // this will not repeat; you have to set repeat logic manually
+                        }
+                    });
+                    newScheduledNotificationIds.push(notificationId);
+                }
             }
         }
 
@@ -229,26 +238,26 @@ const BoosterGoalReminder = ({ navigation }) => {
                             <View
                                 style={{
                                     flexDirection: 'row',
-                                    flexWrap: 'wrap',  // Add this line to allow wrapping
+                                    flexWrap: 'wrap',
                                     justifyContent: 'space-around',
                                 }}
                             >
-                                {['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'].map((day, index) => (
+                                {Object.keys(dayMapping).map((abbreviatedDay, index) => (
                                     <TouchableOpacity
-                                        key={day} // Now unique
+                                        key={abbreviatedDay} // Use abbreviated day as key
                                         style={{
                                             width: 30,
                                             height: 30,
                                             borderRadius: 20,
-                                            borderColor: selectedDays[day] ? '#ab713c' : '#90b1c2',
+                                            borderColor: selectedDays[dayMapping[abbreviatedDay]] ? '#ab713c' : '#90b1c2',
                                             borderWidth: 2,
                                             justifyContent: 'center',
                                             alignItems: 'center',
                                             marginHorizontal: 5,
                                         }}
-                                        onPress={() => toggleDaySelection(day)}
+                                        onPress={() => toggleDaySelection(abbreviatedDay)} // Pass abbreviated day
                                     >
-                                        <Text style={{ fontWeight: 'bold' }}>{day}</Text>
+                                        <Text style={{ fontWeight: 'bold' }}>{abbreviatedDay}</Text>
                                     </TouchableOpacity>
                                 ))}
                             </View>

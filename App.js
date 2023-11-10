@@ -84,8 +84,8 @@ import B_Lessn5_CPTime from './src/Screens/booster/lesson5/B_Lessn5_CPTime';
 import B_Lesson5_Goals from './src/Screens/booster/lesson5/B_Lesson5_Goals';
 import BoosterStart from './src/Screens/booster/BoosterStart';
 import BoosterInstructins from './src/Screens/booster/BoosterInstructins';
-import Login from './src/auth/Login';
-import Signup from './src/auth/SignUp';
+// import Login from './src/auth/Login';
+// import Signup from './src/auth/SignUp';
 import WorkShopGoalReminder from './src/Screens/settings/WorkShopGoalReminder';
 import BoosterGoalReminder from './src/Screens/settings/BoosterGoalReminder';
 import StartBoosterReminder from './src/Screens/settings/StartBoosterReminder';
@@ -161,8 +161,8 @@ export default function App() {
 
           {/* {isLoggedIn ? (
             <> */}
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Signup" component={Signup} />
+          {/* <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} /> */}
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Workshop" component={WorkShopScreen} />
 
@@ -261,7 +261,6 @@ export default function App() {
           <Stack.Screen name="Lesson 5 Principles" component={Principles5} />
           <Stack.Screen name="Lesson 5 Goals" component={Goals5} />
           <Stack.Screen name="Lesson 5 Completion" component={Completion} />
-
 
           <Stack.Screen name="About AE Engaged" component={AboutAeEngaged} />
           <Stack.Screen name="About AE Classes" component={Classes} />

@@ -63,7 +63,6 @@ const Principles = ({ navigation }) => {
 
                             {'\u2022'} Spousal pre-eminence is an element of cleaving.{"\n"}
                             {'\u2022'} This means we put our relationship with our spouse before all other relationships in our life.{"\n"}
-                            {'\u2022'} This means we put our relationship with our spouse before all other relationships in our life.{"\n"}
                             {'\u2022'} This is especially important in the first few years of a new marriage as we are establishing patterns for the way we interact with not only our spouse but the other people in our lives.{"\n"}
                         </Text>
 
@@ -72,16 +71,16 @@ const Principles = ({ navigation }) => {
                         <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
 
                             {'\u2022'} One of the ways we can safeguard the
-                            trust in our marriage is by creang a
+                            trust in our marriage is by creating a
                             boundary (“invisible fence”) around the
                             sacred ground of married life.{"\n"}
-                            {'\u2022'}  Loyalty is the foundaon of the invisible
+                            {'\u2022'}  Loyalty is the foundation of the invisible
                             fence{"\n"}
                             {'\u2022'}  We should discuss as a couple what we
                             want to keep inside the fence.{"\n"}
                         </Text>
 
-                        <Text style={{ fontSize: 16, textAlign: 'center', fontWeight: '900', marginBottom: 10 }}>Priorizing We Over Me
+                        <Text style={{ fontSize: 16, textAlign: 'center', fontWeight: '900', marginBottom: 10 }}>prioritizing We Over Me
                         </Text>
 
 
@@ -90,7 +89,7 @@ const Principles = ({ navigation }) => {
                             {'\u2022'} Moving from “me” to “we” can
                             be an adjustment.{"\n"}
                             {'\u2022'}  This change in thinking usually takes
-                            intenonal selflessness and sacrifice,
+                            intentional selflessness and sacrifice,
                             and it takes practice.{"\n"}
                         </Text>
                         <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10, marginTop: 20 }}>Notes Section:</Text>

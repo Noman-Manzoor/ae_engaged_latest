@@ -86,7 +86,7 @@ const Resources5 = ({ navigation }) => {
                 {'\n'}
                 <Text style={{ textDecorationLine: 'underline' }}>Sexuality:</Text>{'\n'}
                 • Finalyson-fife.com/podcast-archive{'\n\n'}
-                • Chelomleavi.com{'\n\n'}
+                • Chelomleavitt.com{'\n\n'}
                 • Themarriagebed.com{'\n\n'}
                 • Thechristiansexeducator.com
               </Text>

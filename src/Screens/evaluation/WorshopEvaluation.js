@@ -68,8 +68,8 @@ const WorshopEvaluation = ({ navigation }) => {
             </Text>
 
             <Text style={{ color: '#707070', fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10, marginBottom: 50, textAlign: "center", paddingLeft: 20, paddingRight: 20 }}>
-              Please fill out the following evaluaon to
-              help us connue to improve our program.
+              Please fill out the following evaluation to
+              help us continue to improve our program.
               It should take about 10 minutes to
               complete. We really appreciate your
               feedback!

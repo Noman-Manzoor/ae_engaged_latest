@@ -56,12 +56,12 @@ const B_Lesson3_Principle = ({ navigation }) => {
               making between husband and wife and God.
               You need to be wise stewards and use your
               agency to make choices about what you will
-              and will not do in your sexual relaonship.
+              and will not do in your sexual relationship.
               Being able to discuss and communicate about
-              all aspects of your sexual relaonship
-              (mental, emoonal, physical, spiritual) with
+              all aspects of your sexual relationship
+              (mental, emotional, physical, spiritual) with
               your spouse can greatly increase your sexual
-              sasfacon and help you become one.{'\n'}
+              satisfaction and help you become one.{'\n'}
             </Text>
 
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>

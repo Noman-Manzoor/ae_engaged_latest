@@ -119,21 +119,21 @@ const EmotionalPrep = ({ navigation }) => {
             <View style={{ paddingLeft: 25, paddingRight: 20 }}>
               <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Discussion Questions:{'\n'}</Text>
-                • Fill in the blank: “I feel emoonally safe with my
+                • Fill in the blank: “I feel emotionally safe with my
                 partner when s/he _________.” {'\n'}
 
-                •  How do I currently feel about our emoonal
-                connecon as a couple? {'\n'}
+                •  How do I currently feel about our emotional
+                connection as a couple? {'\n'}
                 {'  '}o Are there any improvements we could make?{'\n'}
 
-                •  Wedding night anxiees: For many couples, their
+                •  Wedding night anxieties: For many couples, their
                 wedding night will be the first me they
                 experience sex. {'\n'}
-                {'  '}o What anxiees/fears do I have about our first
+                {'  '}o What anxieties/fears do I have about our first
                 me being together sexually?{'\n'}
-                •  How would I define “emoonal infidelity?” How can
+                •  How would I define emotional infidelity?” How can
                 we help prevent either of us from becoming
-                emoonally unfaithful?{'\n'}
+                emotionally unfaithful?{'\n'}
               </Text>
 
             </View>

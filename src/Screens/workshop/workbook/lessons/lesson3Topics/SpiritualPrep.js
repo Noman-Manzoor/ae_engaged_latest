@@ -121,7 +121,7 @@ const SpiritualPrep = ({ navigation }) => {
                 •  How has my faith affected the way I view
                 marital sexuality?  {'\n'}
 
-                •  What are my atudes about how sexuality and
+                •  What are my attitudes about how sexuality and
                 spirituality go together? {'\n'}
 
                 •   Do I understand the spiritual side of sexuality? If not,

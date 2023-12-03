@@ -50,13 +50,13 @@ const B_Lesson2_Principle = ({ navigation }) => {
 
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               Do you remember talking about being on the
-              same team, taking me-outs, or starng
-              soly? You can review Lesson 2 in your
+              same team, taking me-outs, or starting
+              softly? You can review Lesson 2 in your
               parcipant workbook to help you remember.
               Healthy communicaon creates the kind of
-              connecon that builds security, emoonal
+              connection that builds security, emotional
               safety, and an opportunity for more
-              meaningful, loving relaonships. These are all
+              meaningful, loving relationships. These are all
               tools you can use to work through conflict
               and challenges that may arise in your
               marriage.

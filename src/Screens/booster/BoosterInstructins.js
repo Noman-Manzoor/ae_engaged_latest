@@ -46,22 +46,22 @@ const BoosterInstructins = ({ navigation }) => {
             />
             <Text style={{ marginBottom: 10, marginLeft: 10, textAlign: 'center' }}>Booster Workbook: Welcome</Text>
             <View style={{ width: '100%', borderBottomColor: '#ab713c', borderBottomWidth: 1, marginBottom: 10 }} />
-            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Instructins</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10, marginLeft: 10 }}>Instructions</Text>
             <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               The Anxiously Engaged Booster is a set of
               reminders and structured opportunies to talk
-              about your relaonship over the next 5 weeks.{'\n'}
+              about your relationship over the next 5 weeks.{'\n'}
             </Text>
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
-              You can set a noficaon to remind yourselves
-              to intenonally engage together for about 15
+              You can set a notification to remind yourselves
+              to intentionally engage together for about 15
               minutes in one of our Booster lessons.{'\n'}
             </Text>
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               Like the Anxiously Engaged program you
-              completed before or soon aer your marriage,
+              completed before or soon after your marriage,
               each week you will have a brief review of key
               principles, couple me, and a goal to work on
               together.

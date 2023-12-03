@@ -120,7 +120,7 @@ const Serving = ({ navigation }) => {
                 {'\n'}
                 • What are some causes we might join to make a
                 difference? What are things we especially care about
-                protecng, supporng, or improving in our families
+                protecting, supporting, or improving in our families
                 and community?{'\n'}
                 • What are some of our personal missions/ministries?
                 How can we support each other in our personal
@@ -128,7 +128,7 @@ const Serving = ({ navigation }) => {
                 to together?{'\n'}
 
                 •  How can we answer the call of The Family
-                Proclamaon to promote measures that strengthen
+                Proclamation to promote measures that strengthen
                 marriages and families?{'\n'}
 
               </Text>

@@ -85,11 +85,11 @@ const Principles2 = ({ navigation }) => {
                             is one of the greatest predictors of how
                             the conflict will end – when we start hard,
                             the conflict usually ends badly{"\n"}
-                            {'\u2022'}  A hard start-up is an accusaon, an insult
+                            {'\u2022'}  A hard start-up is an accusation, an insult
                             or an explosion. It almost always begins
                             with the word “you” and is usually followed
                             by “always” or “never.” It asserts a
-                            generalizaon about something, not the
+                            generaliztiaon about something, not the
                             truth about it. (“You never pick up the kids
                             from school. Why is it always my
                             responsibility?”) {"\n"}
@@ -106,7 +106,7 @@ const Principles2 = ({ navigation }) => {
                         <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
 
                             {'\u2022'} Examples: eyerolling, name calling,
-                            atude of superiority and disgust{"\n"}
+                            attitude of superiority and disgust{"\n"}
                             {'\u2022'} Contempt communicates that our
                             partner isn’t even worth engaging—
                             he/she is worthless. {"\n"}

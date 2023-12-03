@@ -68,7 +68,7 @@ const Feedback = ({ navigation }) => {
             </Text>
 
             <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 20, marginBottom: 50, textAlign: "center", paddingLeft: 20, paddingRight: 20 }}>
-              We want to connue to improve our app
+              We want to continue to improve our app
               to make it a wonderful experience. Please
               leave us any thoughts or feedback you
               have by following the link below. It will take about 2 minutes.

@@ -85,7 +85,7 @@ const Principles4 = ({ navigation }) => {
                 • The number one reason divorced individuals give for their divorce is lack of commitment (of one or both partners).
               </Text>
               <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 50 }}>
-                • When we are considering divorce, it is helpful to think about President Faust’s 3 wise tests: o Length of marital difficulties o An “apparently irredeemable” relationship o Destructive of our dignity as a child of God.
+                • When considering divorce, it is helpful to think about President Faust's three wise tests: the duration of marital difficulties, whether the relationship seems 'apparently irredeemable,' and if it is destructive to our dignity as a child of God.
               </Text>
             </View>
           </ScrollView>

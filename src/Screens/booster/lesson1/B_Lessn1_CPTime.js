@@ -115,7 +115,7 @@ const B_Lessn1_CPTime = ({ navigation }) => {
 
             <Text style={{ fontSize: 16, fontWeight: '900', marginBottom: 10, paddingLeft: 25 }}>Discussion Questions:
             </Text>
-            <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these quesons together. {"\n"}
+            <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these questions together. {"\n"}
             </Text>
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               {'\u2022'} Becoming one can be a long journey. How have you
@@ -124,7 +124,7 @@ const B_Lessn1_CPTime = ({ navigation }) => {
               {'\u2022'} How are you as a couple doing with “leaning/falling in”?{"\n"}
               {'\u2022'} Now that you have been married, how do you feel like
               you’re doing with keeping things inside the “invisible
-              fence”? How could you do beer?
+              fence”? How could you do better?
             </Text>
 
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 10, marginRight: 15, marginTop: 20, marginBottom: 10 }}>

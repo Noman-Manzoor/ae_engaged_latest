@@ -66,7 +66,7 @@ const EqualPartnership = ({ navigation }) => {
               </Text>
 
               <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 10 }}>
-                Instrucons: Thinking about marriage and divorce in general (not your marriage specifically), answer the following 8 questions one at a time as honestly as you can for yourself and then share your answer with your partner. Then go on to the next question.
+                Instructions: Thinking about marriage and divorce in general (not your marriage specifically), answer the following 8 questions one at a time as honestly as you can for yourself and then share your answer with your partner. Then go on to the next question.
               </Text>
               <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginBottom: 10 }}>
                 1. What circumstances do you think could justify divorce?

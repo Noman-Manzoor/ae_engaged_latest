@@ -52,7 +52,7 @@ const B_Lesson1_Principle = ({ navigation }) => {
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               Do you remember the Ciardi poem “Most
               Like an Arch This Marriage”? Arches, like the
-              one above, are many mes stronger than the
+              one above, are many times stronger than the
               normal post and beam doorways we walk
               through because when the two sides of an
               arch meet at the center it actually creates an
@@ -64,7 +64,7 @@ const B_Lesson1_Principle = ({ navigation }) => {
 
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               One of the ways you can lean and fall all the
-              way in is by creang an “invisible fence”
+              way in is by creating an “invisible fence”
               around your marriage. President Hinckley
               counseled, “When you are married, be
               fiercely loyal one to another.”* As a married couple, you know the private behaviors and characteristics of your spouse because he/she has been vulnerable enough to share his/her soul with you. These intimacies are sacred ground and you must protect them. * BYU Commencement, April 1995

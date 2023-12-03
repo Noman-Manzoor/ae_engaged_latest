@@ -118,19 +118,19 @@ const PhysicalPrep = ({ navigation }) => {
             <View style={{ paddingLeft: 25, paddingRight: 20 }}>
               <Text style={{ fontSize: 16, marginLeft: 10, marginRight: 10, marginTop: 10 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Discussion Questions:{'\n'}</Text>
-                •  What specific quesons do I have about the
+                •  What specific questions do I have about the
                 mechanics of sex? {'\n'}
 
-                •  What general expectaons do I have for our sexual
-                relaonship? {'\n'}
+                •  What general expectations do I have for our sexual
+                relationship? {'\n'}
 
                 •   What are we doing together and separately to help
-                us be ready for a healthy sexual relaonship?  {'\n'}
-                {'  '}o What anxiees/fears do I have about our first
+                us be ready for a healthy sexual relationship?  {'\n'}
+                {'  '}o What anxieties/fears do I have about our first
                 me being together sexually?{'\n'}
                 •   Given that a woman’s sexual response is more
                 complex than a man’s, how can we make sure we
-                are both sexually sasfied?{'\n'}
+                are both sexually satisfied?{'\n'}
               </Text>
 
             </View>

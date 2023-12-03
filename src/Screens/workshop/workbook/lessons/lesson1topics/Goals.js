@@ -115,10 +115,10 @@ const Goals = ({ navigation }) => {
                         </Text>
                         <View style={{ width: '20%', borderBottomColor: '#90b1c2', borderBottomWidth: 10, marginBottom: 10, marginLeft: 10 }} />
 
-                        <Text style={{ fontSize: 16, textAlign: 'center', fontWeight: '900', marginBottom: 10 }}>Priorizing "We Over Me"
+                        <Text style={{ fontSize: 16, textAlign: 'center', fontWeight: '900', marginBottom: 10 }}>prioritizing "We Over Me"
                         </Text>
                         <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
-                            Choose one way you can priorize "we over me"
+                            Choose one way you can prioritize "we over me"
                             and work on it this week.
                         </Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 10, marginRight: 15, marginTop: 20, marginBottom: 10 }}>

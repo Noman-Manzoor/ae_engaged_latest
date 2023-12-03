@@ -114,7 +114,7 @@ const B_Lesson3_Goals = ({ navigation }) => {
 
                         <Text style={{ fontSize: 16, fontWeight: '900', marginBottom: 10, paddingLeft: 25 }}>This Week
                         </Text>
-                        <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>What is a goal you can set to become beer sexual
+                        <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>What is a goal you can set to become better sexual
                             communicators?{"\n"}
                         </Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 10, marginRight: 15, marginTop: 20, marginBottom: 10 }}>

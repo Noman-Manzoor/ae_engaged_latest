@@ -115,7 +115,7 @@ const B_Lesson5_Goals = ({ navigation }) => {
                         <Text style={{ fontSize: 16, paddingLeft: 25, fontWeight: '900', marginBottom: 10 }}>This Week
                         </Text>
                         <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20 }}>What is one way you can intenonally nurture your
-                            relaonship this week?{"\n"}
+                            relationship this week?{"\n"}
                         </Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginLeft: 10, marginRight: 15, marginTop: 20, marginBottom: 10 }}>
                             <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>Notes :</Text>

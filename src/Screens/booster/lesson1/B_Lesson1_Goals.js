@@ -115,7 +115,7 @@ const B_Lesson1_Goals = ({ navigation }) => {
                         </Text>
                         <Text style={{ fontSize: 16, paddingLeft: 30, paddingRight: 20 }}>What is one thing you can do this week to seek
                             help from your Heavenly Parents, lean/fall into
-                            your relaonship, or to beer forfy your invisible
+                            your relationship, or to better fortify your invisible
                             fence?{"\n"}
                         </Text>
 

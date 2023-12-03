@@ -115,7 +115,7 @@ const B_Lessn4_CPTime = ({ navigation }) => {
 
             <Text style={{ fontSize: 16, paddingLeft: 25, fontWeight: '900', marginBottom: 10 }}>Discussion Questions:
             </Text>
-            <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these quesons together. {"\n"}
+            <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these questions together. {"\n"}
             </Text>
             <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20, }}>
               {'\u2022'} Do you hold any beliefs that don’t view men and

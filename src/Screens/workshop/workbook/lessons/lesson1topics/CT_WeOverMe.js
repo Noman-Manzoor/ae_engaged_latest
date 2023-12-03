@@ -114,12 +114,12 @@ const CT_WeOverMe = ({ navigation }) => {
 
                         <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, color: '#707070' }}>
 
-                            {'\u2022'}  What struggles do I have with priorizing
+                            {'\u2022'}  What struggles do I have with prioritizing
                             we over me?{"\n"}
-                            {'\u2022'}  How am I effecve at priorizing we over me?{"\n"}
+                            {'\u2022'}  How am I effecve at prioritizing we over me?{"\n"}
                             {'\u2022'}  What are some of the benefits of thinking of
                             we over me?{"\n"}
-                            {'\u2022'}  What parts of our relaonship should we make
+                            {'\u2022'}  What parts of our relationship should we make
                             sure to protect with the “invisible fence?”{"\n"}
                             {'\u2022'}  What is one thing that I can do this week that will
                             help give greater priority to “we?”{"\n"}

@@ -118,21 +118,21 @@ const B_Lessn2_CPTime = ({ navigation }) => {
               communicang. (Score 1-5, with 5 being doing well) {"\n"}
             </Text>
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
-              {'\u2022'} I use communicaon to build security, emoonal safety,
-              and love in our relaonship.{"\n"}
+              {'\u2022'} I use communicaon to build security, emotional safety,
+              and love in our relationship.{"\n"}
               {'\u2022'} I feel like I am on the same team as my spouse as we
               work through conflict and challenges.{"\n"}
               {'\u2022'} I feel like I can use me-outs when I feel like I’m going
-              to say or do something hurul.{"\n"}
+              to say or do something hurtful.{"\n"}
               {'\u2022'}  I try to use so start-ups to address concerns that
               I have. {"\n"}
               {'\u2022'}  I feel like we have become more unified in our
-              relaonship since AE. {"\n"}
+              relationship since AE. {"\n"}
 
             </Text>
 
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>Take turns sharing your score with your spouse (about 5
-              minutes each). Discuss ways you can become beer
+              minutes each). Discuss ways you can become better
               communicators. {"\n"}
             </Text>
 

@@ -52,8 +52,8 @@ const B_Lesson4_Principle = ({ navigation }) => {
 
             <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20, }}>
               Have you ever watched older couples interact
-              with each other? Oen they’re so caring and
-              sweet to each other. President Hinckley oen
+              with each other? Often they’re so caring and
+              sweet to each other. President Hinckley often
               taught, “In the marriage companionship
               there is neither inferiority nor superiority.
               The woman does not walk ahead of the man;
@@ -62,8 +62,8 @@ const B_Lesson4_Principle = ({ navigation }) => {
               daughter of God on an eternal journey.”*
               Likewise, research shows benefits to having
               an equal partnership, like happier
-              relaonships and beer individual well-being.
-              And marital decision making is beer when a
+              relationships and better individual well-being.
+              And marital decision making is better when a
               marriage is founded on equal partnership.{'\n'}
             </Text>
             <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20, }}>

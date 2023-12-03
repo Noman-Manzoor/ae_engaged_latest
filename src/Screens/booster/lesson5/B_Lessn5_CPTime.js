@@ -115,18 +115,18 @@ const B_Lessn5_CPTime = ({ navigation }) => {
 
             <Text style={{ fontSize: 16, paddingLeft: 25, fontWeight: '900', marginBottom: 10 }}>Discussion Questions:
             </Text>
-            <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these quesons together. {"\n"}
+            <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these questions together. {"\n"}
             </Text>
             <Text style={{ fontSize: 14, paddingLeft: 25, paddingRight: 20, }}>
-              {'\u2022'} What are you doing to intenonally invest in nurturing
-              your relaonship? {"\n"}
-              {'\u2022'}  Reflect on a me you nurtured your relaonship by
+              {'\u2022'} What are you doing to intentionally invest in nurturing
+              your relationship? {"\n"}
+              {'\u2022'}  Reflect on a me you nurtured your relationship by
               learning from others. Share what you learned with
               each other. {"\n"}
               {'\u2022'} Have you found a couple you admire that could serve
               as marriage mentors for you? {"\n"}
 
-              {'\u2022'}  Reflect on a me you nurtured your relaonship by
+              {'\u2022'}  Reflect on a me you nurtured your relationship by
               serving others together. Share how you felt during
               that experience with each other.{"\n"}
             </Text>

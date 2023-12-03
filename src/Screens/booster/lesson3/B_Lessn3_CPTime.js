@@ -114,19 +114,19 @@ const B_Lessn3_CPTime = ({ navigation }) => {
 
             <Text style={{ fontSize: 16, fontWeight: '900', marginBottom: 10, paddingLeft: 25 }}>Discussion Questions:
             </Text>
-            <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these quesons together. {"\n"}
+            <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20 }}>Take 10-15 minutes to discuss these questions together. {"\n"}
             </Text>
             <Text style={{ fontSize: 16, paddingLeft: 25, paddingRight: 20, }}>
               {'\u2022'}  Mental: How well do you feel that we are
               communicang about our sexual experiences, fears or
               worries, preferences, fantasies, boundaries, etc.?{"\n"}
-              {'\u2022'} Emoonal: What is something that I do that helps you
-              feel emoonally safe? Are there any improvements I
+              {'\u2022'} Emotional: What is something that I do that helps you
+              feel emotionally safe? Are there any improvements I
               could make? {"\n"}
-              {'\u2022'} Physical: Has our sexual relaonship raised any new
-              quesons for you about sex? Are you feeling sexually
-              sasfied in our relaonship? {"\n"}
-              {'\u2022'} Spiritual: Does our sexual relaonship help me feel
+              {'\u2022'} Physical: Has our sexual relationship raised any new
+              questions for you about sex? Are you feeling sexually
+              satisfied in our relationship? {"\n"}
+              {'\u2022'} Spiritual: Does our sexual relationship help me feel
               uplied and unified? {"\n"}
             </Text>
 
